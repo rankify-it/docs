@@ -1,0 +1,6 @@
+site_name: My Docs
+theme: readthedocs
+plugins:
+    - plantuml:
+        puml_url: https://www.plantuml.com/plantuml/
+        num_workers: 8
