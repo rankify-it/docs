@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/architecure%20overview/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Smart contract infrastructure - Rankify Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Smart contract infrastructure";
+        var mkdocs_page_input_path = "architecure overview/index.md";
+        var mkdocs_page_url = "/architecure%20overview/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Welcome/">Rankify Basics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Welcome/governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Welcome/tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecure overview</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Smart contract infrastructure</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cells">Cells</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#app-store-infrastructure">App store infrastructure</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#factory">Factory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#app-repo-registry">App Repo Registry</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#registry">Registry</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Interfaces</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../interfaces/interfaces/">Factory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../interfaces/solidity-api/">Solidity API</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Specifications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../specifications/IAppFactory/">App factory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../specifications/ManagedAssetFactory/">Managed Asset Factory</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Architecure overview</li>
+      <li class="breadcrumb-item active">Smart contract infrastructure</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/architecure overview/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="smart-contract-infrastructure">Smart contract infrastructure</h1>
+<p>The Rankify smart contract infrastructure is built upon a modular design, emphasizing trustless operations to facilitate progressive decentralization within organizations as well as mitigate some roadblocks on wider adoption of decentralized governance.</p>
+<p>Adhering to systems theory principles, the architecture can be understood as a black box, responding to stimuli inputs with defined output reactions, while its key feature is the support for recursive patterns, enabling iterative processes on both input and output levels.</p>
+<p>Including governing body, infrastructure as consisting of three main pieces:</p>
+<ul>
+<li><strong>App Factory</strong>: Trusted execution body that can deploy only applications listed in it's registry</li>
+<li><strong>App Store</strong>: Registry of different ranking system applications that may be installed on cells</li>
+<li><strong>Cell infrastructures</strong>: Dimensions for ranking that participants produce</li>
+</ul>
+<p><img alt="high-level-infrastructure" src="../assets/high-level-architecture.png" /></p>
+<p>The rankify community governing DAO and multi-sig in the image above can be seen as an instance of Cell infrastructure.</p>
+<h2 id="cells">Cells</h2>
+<p>A single cell is an autonomous governance unit, structured as an NxM matrix of inputs and outputs connected to a multisig-wallet. Each cell, representing a specific topic or workgroup, leverages a modular and customizable infrastructure consisting of:</p>
+<ul>
+<li><strong>Rank NFT</strong>: A semi-fungible ERC1155 token signifying the bearer's rank within the subject.</li>
+<li><strong>Governance Token</strong>: An ERC20 token used for governance, minted by exchanging Rank NFTs.</li>
+<li><strong>DAO contract</strong>: <a href="https://devs.aragon.org/docs/osx/reference-guide/core/dao/">OSx DAO Contract</a> governed entirely by holders of the governance token.</li>
+<li><strong>App Instance</strong>: Ranking app, implements the autonomous competence identification protocol.</li>
+<li><strong>Multisig Wallet</strong>: A wallet adhering to the Gnosis <a href="https://github.com/safe-global/safe-smart-account/blob/main/contracts/interfaces/ISafe.sol">ISafe</a>, connecting governing bodies and facilitating decision-making.</li>
+</ul>
+<p><img alt="cell level infrastructure" src="../assets/cell-inrastructure.png" /></p>
+<p>Protocol is modular and trends to support already existing multi-sig infrastructure as well as experimentation hence protocol deployed, established, and modified cells, that are referred as <em>Primordial</em>, <em>Generated</em>, and <em>Mutated</em> accordingly.</p>
+<p>Above diagram describes infrastructure <em>Generated</em> cells adhere, while diagram involving governing body (green blocks) on top of this page describes <em>primordial</em> cell, which yet has no Rank NFT asset to complete it, as well as it is not listed in any auto-generation registries.</p>
+<!-- - **Primordial**: Existing multisig wallets incorporating logic of protocol without having support for immutable head
+- **Complete**: Cells deployed in strict compliance with protocol
+- **Mutated**: Cells that are intentionally modifying rankify protocol for sake of research and further development
+  Initial cell input, also referred as "_head_" -->
+
+<h2 id="app-store-infrastructure">App store infrastructure</h2>
+<p>Rankify goal is to provide as generic and permissions approach as possible with yet a security guarantees between different DAO members that are translated trough curating own application infrastructure. Application infrastructure consist of:</p>
+<ul>
+<li><strong>Repository Factory</strong>: Provides ability for applications to have versioned control.</li>
+<li><strong>Repositories</strong>: Each repository contains access to versioned installers of an application.</li>
+<li><strong>Registry</strong>: Source of trust that Rankify DAO puts attestations for repositories it supports.</li>
+</ul>
+<p><img alt="app store infra" src="../assets/Appfra.png" style="height:auto;width:500px" /></p>
+<h3 id="factory">Factory</h3>
+<p>The App Factory serves as a source for app installations, guaranteeing deterministic logic source in deployed applications. This enables the creation of interconnected ecosystems where trust is built on a shared understanding of app functionality.</p>
+<!-- ![App factory](../assets/PluginFactory.png) -->
+
+<p>Every app listed on any repositories must undergo Rankify curation, however other entities or individuals are welcome to start their own Factories as well.
+It follows the standards set by the <a href="https://devs.aragon.org/docs/osx/how-it-works/core/plugins/">OSx PluginFactory</a>, while generalizing it in <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IVRepoFactory.sol">IVRepoFactory</a> it preserves ability for seamless integration and compatibility within the broader ecosystem.</p>
+<h3 id="app-repo-registry">App Repo Registry</h3>
+<!-- <div class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="544px" preserveAspectRatio="true" style="background: #ffffff" version="1.1" viewBox="0 0 316 544" width="316px" zoomAndPan="magnify"><defs/><g><rect fill="#1F1803" height="1" style="stroke:#1F1803;stroke-width:1.0;" width="1" x="0" y="0"/><text fill="#33FF02" font-family="sans-serif" font-size="12" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="129" x="5" y="17">PlantUML 1.2024.5</text><rect fill="#33FF02" height="21.2969" style="stroke:#33FF02;stroke-width:1.0;" width="304" x="5" y="26.9688"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="178" x="6" y="41.9688">[From string (line 35) ]</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="5" x="5" y="62.2656"> </text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="79" x="5" y="78.5625">@startuml</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="125" x="5" y="94.8594">scale 600 width</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="5" x="5" y="111.1563"> </text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="5" x="5" y="127.4531"> </text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="5" x="5" y="143.75"> </text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="15" x="5" y="160.0469">...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="185" x="5" y="176.3438">... ( skipping 596 lines )</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="15" x="5" y="192.6406">...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="123" x="5" y="208.9375">F -&gt; AC: deploy</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="89" x="5" y="225.2344">activate AC</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="134" x="5" y="241.5313">F &lt;- AC: address</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="109" x="5" y="257.8281">deactivate AC</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="304" x="5" y="274.125">BO -&gt; B: Register Trusted App Factory</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="201" x="5" y="290.4219">F &lt;-&gt; F: register address</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="123" x="5" y="306.7188">U &lt;- F: address</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="96" x="5" y="323.0156">deactivate F</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="259" x="5" y="339.3125">U -&gt; B: Register token with audit</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="77" x="5" y="355.6094">activate B</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="259" x="5" y="371.9063">B -&gt; F: verify address (eip-1271)</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="76" x="5" y="388.2031">activate F</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="133" x="5" y="404.5">F -&gt; B: response</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="96" x="5" y="420.7969">deactivate F</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="185" x="5" y="437.0938">B &lt;-&gt; B: Activate token</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="138" x="5" y="453.3906">B -&gt; U: Response</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="97" x="5" y="469.6875">deactivate B</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="190" x="5" y="485.9844">U -&gt; B: Bridge token --&gt;</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="5" x="5" y="502.2813"> </text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" text-decoration="wavy underline" textLength="30" x="5" y="518.5781">&lt;!--</text><text fill="#FF0000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="106" x="10" y="534.875">Syntax Error?</text></g></svg></div> -->
+
+<!-- note left of U: This is a note. -->
+
+<p>The App Repository, built upon the <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepository.sol">IRepository</a> interface, which mirrors the functionality of the <a href="https://github.com/aragon/osx/blob/develop/packages/contracts/src/framework/plugin/repo/IPluginRepo.sol">IPluginRepo</a> interface. It provides a secure repository for versioned application implementations.</p>
+<h2 id="registry">Registry</h2>
+<p>Registry is a source of trust for external applications to verify attestations given by Rankify to the </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Welcome/tokens/" class="btn btn-neutral float-left" title="Token types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="specifications/" class="btn btn-neutral float-right" title="Specifications">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Welcome/tokens/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="specifications/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

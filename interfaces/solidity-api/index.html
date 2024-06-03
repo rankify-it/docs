@@ -3,24 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Solidity API - My Docs</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/interfaces/solidity-api/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Solidity API - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
         var mkdocs_page_name = "Solidity API";
-        var mkdocs_page_input_path = "contracts/index.md";
-        var mkdocs_page_url = null;
+        var mkdocs_page_input_path = "interfaces/solidity-api.md";
+        var mkdocs_page_url = "/interfaces/solidity-api/";
       </script>
     
     <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
+      <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
       <script>hljs.highlightAll();</script> 
 </head>
 
@@ -30,17 +34,35 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> My Docs
-        </a>
+          <a href="../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Welcome to MkDocs</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/">Rankify Basics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/tokens/">Token types</a>
+                  </li>
               </ul>
-              <p class="caption"><span class="caption-text">Contracts</span></p>
+              <p class="caption"><span class="caption-text">Architecure overview</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../architecure%20overview/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../architecure%20overview/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Interfaces</span></p>
               <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../interfaces/">Factory</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Solidity API</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#compositeerc1155">CompositeERC1155</a>
@@ -118,6 +140,58 @@
     <li class="toctree-l3"><a class="reference internal" href="#_domainseparatorv4">_domainSeparatorV4</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#_hashtypeddatav4">_hashTypedDataV4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#initializedomain">initializeDomain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#activatedomain">activateDomain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deactivatedomain">deactivateDomain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changefee">changeFee</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changeregistrar">changeRegistrar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deletename">deleteName</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changereferralprogram">changeReferralProgram</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#resolverecord">resolveRecord</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#register">register</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmodifyprice">getModifyPrice</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modifyusername">modifyUserName</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getbalance">getBalance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getdomainstate">getDomainState</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-values_2">Return Values</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getdomainstatebyidx">getDomainStateByIdx</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getcontractstate">getContractState</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-values_3">Return Values</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#withrawfunds">withrawFunds</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#eip712inspectorfacet">EIP712InspectorFacet</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#inspecteip712hashes">inspectEIP712Hashes</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#currentchainid">currentChainId</a>
     </li>
@@ -203,7 +277,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#onerc721received">onERC721Received</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getcontractstate">getContractState</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getcontractstate_1">getContractState</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#getturn">getTurn</a>
     </li>
@@ -231,6 +305,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#canendturn">canEndTurn</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isplayerturncomplete">isPlayerTurnComplete</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getplayervotedarray">getPlayerVotedArray</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getplayersmoved">getPlayersMoved</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#rankifyinstancerequirementsfacet">RankifyInstanceRequirementsFacet</a>
@@ -239,23 +319,23 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#setjoinrequirements">setJoinRequirements</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#getjoinrequirements">getJoinRequirements</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-values_2">Return Values</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-values_4">Return Values</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#getjoinrequirementsbytoken">getJoinRequirementsByToken</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-values_3">Return Values</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-values_5">Return Values</a>
     </li>
         </ul>
     </li>
@@ -265,17 +345,17 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#onerc1155received_1">onERC1155Received</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_11">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-values_4">Return Values</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-values_6">Return Values</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#onerc1155batchreceived_1">onERC1155BatchReceived</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_12">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-values_5">Return Values</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-values_7">Return Values</a>
     </li>
         </ul>
     </li>
@@ -292,6 +372,86 @@
     <li class="toctree-l3"><a class="reference internal" href="#unlock_1">unlock</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#unlockedbalanceof_1">unlockedBalanceOf</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#imultipass">IMultipass</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resolverecord_1">resolveRecord</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#initializedomain_1">initializeDomain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#activatedomain_1">activateDomain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deactivatedomain_1">deactivateDomain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changefee_1">changeFee</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changeregistrar_1">changeRegistrar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deletename_1">deleteName</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changereferralprogram_1">changeReferralProgram</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#register_1">register</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modifyusername_1">modifyUserName</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_13">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getbalance_1">getBalance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getdomainstate_1">getDomainState</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_14">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-values_8">Return Values</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getcontractstate_2">getContractState</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-values_9">Return Values</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#withrawfunds_1">withrawFunds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmodifyprice_1">getModifyPrice</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fundswithdawn">fundsWithdawn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#initializeddomain">InitializedDomain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domainactivated">DomainActivated</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domaindeactivated">DomainDeactivated</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domainfeechanged">DomainFeeChanged</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#freeregistrationschanged">FreeRegistrationsChanged</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#registrarchangerequested">RegistrarChangeRequested</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domainnamechangerequested">DomainNameChangeRequested</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#namedeleted">nameDeleted</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domainttlchangerequested">DomainTTLChangeRequested</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#referralprogramchanged">ReferralProgramChanged</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domainchangesarelive">DomainChangesAreLive</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#changesqeuecanceled">changesQeueCanceled</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#registered">Registered</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#referred">Referred</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#userrecordmodified">UserRecordModified</a>
     </li>
         </ul>
     </li>
@@ -404,6 +564,66 @@
     <li class="toctree-l3"><a class="reference internal" href="#libeip712withstoragestorage">LibEIP712WithStorageStorage</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#eip712withstorage">EIP712WithStorage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#libmultipass">LibMultipass</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#namequery">NameQuery</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_15">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domain">Domain</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_16">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#record">Record</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multipass_storage_position">MULTIPASS_STORAGE_POSITION</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#domainnameservice">DomainNameService</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_17">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multipassstoragestruct">MultipassStorageStruct</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multipassstorage">MultipassStorage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_typehash">_TYPEHASH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_typehash_referral">_TYPEHASH_REFERRAL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_checkstringfits32b">_checkStringFits32b</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_checknotempty">_checkNotEmpty</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#resolvedomainindex">resolveDomainIndex</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_getdomainstorage">_getDomainStorage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_initializedomain">_initializeDomain</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_getmodifyprice">_getModifyPrice</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#resolverecord_2">resolveRecord</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_setrecord">_setRecord</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#queryfromrecord">queryFromRecord</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shouldregisterforfree">shouldRegisterForFree</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_registernew">_registerNew</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_getcontractstate">_getContractState</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_getdomainstoragebyidx">_getDomainStorageByIdx</a>
     </li>
         </ul>
     </li>
@@ -551,6 +771,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#playermove">playerMove</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isplayerturncomplete_1">isPlayerTurnComplete</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#enforceisplayinggame">enforceIsPlayingGame</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#hasstarted">hasStarted</a>
@@ -644,11 +866,11 @@
     </ul>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Specs</span></p>
+              <p class="caption"><span class="caption-text">Specifications</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../specs/IAppFactory/">App factory</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../specifications/IAppFactory/">App factory</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../specs/ManagedAssetFactory/">Managed Asset Factory</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../specifications/ManagedAssetFactory/">Managed Asset Factory</a>
                   </li>
               </ul>
       </div>
@@ -658,16 +880,17 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">My Docs</a>
+          <a href="../..">Rankify Documentation</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Contracts</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Interfaces</li>
       <li class="breadcrumb-item active">Solidity API</li>
     <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/interfaces/solidity-api.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -1006,12 +1229,207 @@ function returns the hash of the fully encoded EIP712 message for this domain.</
 address signer = ECDSA.recover(digest, signature);
 ```_
 
-## EIP712InspectorFacet
+## DNSFacet
 
-### inspectEIP712Hashes
+### _isValidSignature
 
 ```solidity
-function inspectEIP712Hashes() public view returns (bytes32 _CACHED_DOMAIN_SEPARATOR, uint256 _CACHED_CHAIN_ID, address _CACHED_THIS, bytes32 _HASHED_NAME, bytes32 _HASHED_VERSION, bytes32 _TYPE_HASH)
+function _isValidSignature(bytes message, bytes signature, address account) internal view returns (bool)
+</code></pre>
+<h3 id="initializedomain">initializeDomain</h3>
+<pre><code class="language-solidity">function initializeDomain(address registrar, uint256 freeRegistrationsNumber, uint256 fee, bytes32 domainName, uint256 referrerReward, uint256 referralDiscount) public
+</code></pre>
+<p>_Initializes new LibMultipass.Domain and configures it's parameters</p>
+<p>Requirements:
+ registrar is not zero
+ domainName is not empty
+ domainIndex is either zero(auto assign) or can be one of preoccupied LibMultipass.Domain names
+ domainName does not exist yet
+ onlyOwner
+ referrerReward+referralDiscount cannot be larger than fee
+ @param registrar address of registrar
+ @param freeRegistrationsNumber number of registrations free of fee
+ @param fee fee in base currency of network
+ @param domainName name of LibMultipass.Domain
+ @param referrerReward referral fee share in base currency of network
+ @param referralDiscount referral discount in base currency of network</p>
+<p>Emits an {InitializedDomain} event._</p>
+<h3 id="activatedomain">activateDomain</h3>
+<pre><code class="language-solidity">function activateDomain(bytes32 domainName) public
+</code></pre>
+<p>_Activates LibMultipass.Domain name</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainActivated} event._</p>
+<h3 id="deactivatedomain">deactivateDomain</h3>
+<pre><code class="language-solidity">function deactivateDomain(bytes32 domainName) public
+</code></pre>
+<p>_Deactivates LibMultipass.Domain name</p>
+<p>Deactivated LibMultipass.Domain cannot mutate names and will return zeros</p>
+<p>Requirements:
+ msg.sender is Owner OR registrar</p>
+<p>Emits an {DomainDeactivated} event._</p>
+<h3 id="changefee">changeFee</h3>
+<pre><code class="language-solidity">function changeFee(bytes32 domainName, uint256 fee) public
+</code></pre>
+<p>_Changes registrar address</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainFeeChanged} event._</p>
+<h3 id="changeregistrar">changeRegistrar</h3>
+<pre><code class="language-solidity">function changeRegistrar(bytes32 domainName, address newRegistrar) public
+</code></pre>
+<p>_Changes registrar address</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {RegistrarChangeRequested} event._</p>
+<h3 id="deletename">deleteName</h3>
+<pre><code class="language-solidity">function deleteName(struct LibMultipass.NameQuery query) public
+</code></pre>
+<p>_deletes name</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainTTLChangeRequested} event._</p>
+<h3 id="changereferralprogram">changeReferralProgram</h3>
+<pre><code class="language-solidity">function changeReferralProgram(uint256 referrerReward, uint256 freeRegistrations, uint256 referralDiscount, bytes32 domainName) public
+</code></pre>
+<h3 id="resolverecord">resolveRecord</h3>
+<pre><code class="language-solidity">function resolveRecord(struct LibMultipass.NameQuery query) public view returns (bool, struct LibMultipass.Record)
+</code></pre>
+<p><em>resolves LibMultipass.Record of name query in to status and identity</em></p>
+<h3 id="register">register</h3>
+<pre><code class="language-solidity">function register(struct LibMultipass.Record newRecord, bytes32 domainName, bytes registrarSignature, uint256 signatureDeadline, struct LibMultipass.NameQuery referrer, bytes referralCode) public payable
+</code></pre>
+<p>_registers new name under LibMultipass.Domain</p>
+<p>Requirements:
+ all arguments must be set
+ domainName must be active
+resolveRecord for given arguments should return no LibMultipass.Record</p>
+<p>Emits an {registered} event._</p>
+<h3 id="getmodifyprice">getModifyPrice</h3>
+<pre><code class="language-solidity">function getModifyPrice(struct LibMultipass.NameQuery query) public view returns (uint256)
+</code></pre>
+<h3 id="modifyusername">modifyUserName</h3>
+<pre><code class="language-solidity">function modifyUserName(bytes32 domainName, struct LibMultipass.NameQuery query, bytes32 newName, bytes registrarSignature, uint256 signatureDeadline) public payable
+</code></pre>
+<p>_modifies exsisting LibMultipass.Record</p>
+<p>Requirements:
+resolveRecord for given arguments should return valid LibMultipass.Record
+LibMultipass.Domain must be active
+newAddress and newName should be set and be unique in current LibMultipass.Domain_</p>
+<h4 id="parameters_6">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>domainName</td>
+<td>bytes32</td>
+<td>LibMultipass.Domain</td>
+</tr>
+<tr>
+<td>query</td>
+<td>struct LibMultipass.NameQuery</td>
+<td></td>
+</tr>
+<tr>
+<td>newName</td>
+<td>bytes32</td>
+<td>new name  Emits an {Modified} event.</td>
+</tr>
+<tr>
+<td>registrarSignature</td>
+<td>bytes</td>
+<td></td>
+</tr>
+<tr>
+<td>signatureDeadline</td>
+<td>uint256</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getbalance">getBalance</h3>
+<pre><code class="language-solidity">function getBalance() external view returns (uint256)
+</code></pre>
+<p><em>returns balance of this contract</em></p>
+<h3 id="getdomainstate">getDomainState</h3>
+<pre><code class="language-solidity">function getDomainState(bytes32 domainName) external view returns (struct LibMultipass.Domain)
+</code></pre>
+<p><em>returns LibMultipass.Domain state variables</em></p>
+<h4 id="parameters_7">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>domainName</td>
+<td>bytes32</td>
+<td>name of the LibMultipass.Domain</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values_2">Return Values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>struct LibMultipass.Domain</td>
+<td>(name,       fee,       freeRegistrationsNumber,        referrerReward,        referralDiscount,        isActive,        registrar,        ttl,         registerSize)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getdomainstatebyidx">getDomainStateByIdx</h3>
+<pre><code class="language-solidity">function getDomainStateByIdx(uint256 index) external view returns (struct LibMultipass.Domain)
+</code></pre>
+<h3 id="getcontractstate">getContractState</h3>
+<pre><code class="language-solidity">function getContractState() external view returns (uint256)
+</code></pre>
+<p><em>returns contract state variables</em></p>
+<h4 id="return-values_3">Return Values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>uint256</td>
+<td>(s_numDomains)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="withrawfunds">withrawFunds</h3>
+<pre><code class="language-solidity">function withrawFunds(address to) public
+</code></pre>
+<p>_Withraws funds stored in smart contract</p>
+<p>Requirements:
+ onlyOwner</p>
+<p>Emits an {fundsWithdawn} event._</p>
+<h2 id="eip712inspectorfacet">EIP712InspectorFacet</h2>
+<h3 id="inspecteip712hashes">inspectEIP712Hashes</h3>
+<pre><code class="language-solidity">function inspectEIP712Hashes() public view returns (bytes32 _CACHED_DOMAIN_SEPARATOR, uint256 _CACHED_CHAIN_ID, address _CACHED_THIS, bytes32 _HASHED_NAME, bytes32 _HASHED_VERSION, bytes32 _TYPE_HASH)
 </code></pre>
 <h3 id="currentchainid">currentChainId</h3>
 <pre><code class="language-solidity">function currentChainId() public view returns (uint256)
@@ -1072,7 +1490,9 @@ function inspectEIP712Hashes() public view returns (bytes32 _CACHED_DOMAIN_SEPAR
 <h3 id="endturn">endTurn</h3>
 <pre><code class="language-solidity">function endTurn(uint256 gameId, uint256[][] votes, string[] newProposals, uint256[] proposerIndicies) public
 </code></pre>
-<p>_Ends the current turn of a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>votes</code> is the array of votes. <code>newProposals</code> is the array of new proposals for the upcoming voting round. <code>proposerIndicies</code> is the array of indices of the proposers in the previous voting round.</p>
+<p>_Ends the current turn of a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>votes</code> is the array of votes.
+ <code>newProposals</code> is the array of new proposals for the upcoming voting round.
+ <code>proposerIndicies</code> is the array of indices of the proposers in the previous voting round.</p>
 <p>emits a <em>ProposalScore</em> event for each player if the turn is not the first.
 emits a <em>TurnEnded</em> event.</p>
 <p>Modifies:</p>
@@ -1308,7 +1728,7 @@ votes and proposerIndicies MUST correspond to players array from game.getPlayers
 <h3 id="onerc721received">onERC721Received</h3>
 <pre><code class="language-solidity">function onERC721Received(address operator, address, uint256, bytes) external view returns (bytes4)
 </code></pre>
-<h3 id="getcontractstate">getContractState</h3>
+<h3 id="getcontractstate_1">getContractState</h3>
 <pre><code class="language-solidity">function getContractState() public view returns (struct IRankifyInstanceCommons.RInstanceState)
 </code></pre>
 <h3 id="getturn">getTurn</h3>
@@ -1350,6 +1770,15 @@ votes and proposerIndicies MUST correspond to players array from game.getPlayers
 <h3 id="canendturn">canEndTurn</h3>
 <pre><code class="language-solidity">function canEndTurn(uint256 gameId) public view returns (bool)
 </code></pre>
+<h3 id="isplayerturncomplete">isPlayerTurnComplete</h3>
+<pre><code class="language-solidity">function isPlayerTurnComplete(uint256 gameId, address player) public view returns (bool)
+</code></pre>
+<h3 id="getplayervotedarray">getPlayerVotedArray</h3>
+<pre><code class="language-solidity">function getPlayerVotedArray(uint256 gameId) public view returns (bool[])
+</code></pre>
+<h3 id="getplayersmoved">getPlayersMoved</h3>
+<pre><code class="language-solidity">function getPlayersMoved(uint256 gameId) public view returns (bool[], uint256)
+</code></pre>
 <h2 id="rankifyinstancerequirementsfacet">RankifyInstanceRequirementsFacet</h2>
 <h3 id="requirementsconfigured">RequirementsConfigured</h3>
 <pre><code class="language-solidity">event RequirementsConfigured(uint256 gameId, struct LibCoinVending.ConfigPosition config)
@@ -1360,7 +1789,7 @@ votes and proposerIndicies MUST correspond to players array from game.getPlayers
 <p><em>Sets the join requirements for a specific game.
 Only the game creator can call this function.
 The game must be in the pre-registration stage.</em></p>
-<h4 id="parameters_6">Parameters</h4>
+<h4 id="parameters_8">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -1386,7 +1815,7 @@ The game must be in the pre-registration stage.</em></p>
 <pre><code class="language-solidity">function getJoinRequirements(uint256 gameId) public view returns (struct LibCoinVending.ConditionReturn)
 </code></pre>
 <p><em>Retrieves the join requirements for a specific game.</em></p>
-<h4 id="parameters_7">Parameters</h4>
+<h4 id="parameters_9">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -1403,7 +1832,7 @@ The game must be in the pre-registration stage.</em></p>
 </tr>
 </tbody>
 </table>
-<h4 id="return-values_2">Return Values</h4>
+<h4 id="return-values_4">Return Values</h4>
 <table>
 <thead>
 <tr>
@@ -1424,7 +1853,7 @@ The game must be in the pre-registration stage.</em></p>
 <pre><code class="language-solidity">function getJoinRequirementsByToken(uint256 gameId, address contractAddress, uint256 contractId, enum LibCoinVending.ContractTypes contractType) public view returns (struct LibCoinVending.ContractCondition)
 </code></pre>
 <p><em>Retrieves the join requirements for a specific token in a game.</em></p>
-<h4 id="parameters_8">Parameters</h4>
+<h4 id="parameters_10">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -1456,7 +1885,7 @@ The game must be in the pre-registration stage.</em></p>
 </tr>
 </tbody>
 </table>
-<h4 id="return-values_3">Return Values</h4>
+<h4 id="return-values_5">Return Values</h4>
 <table>
 <thead>
 <tr>
@@ -1478,7 +1907,7 @@ The game must be in the pre-registration stage.</em></p>
 <pre><code class="language-solidity">function onERC1155Received(address operator, address from, uint256 id, uint256 value, bytes data) external returns (bytes4)
 </code></pre>
 <p>validate receipt of ERC1155 transfer</p>
-<h4 id="parameters_9">Parameters</h4>
+<h4 id="parameters_11">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -1515,7 +1944,7 @@ The game must be in the pre-registration stage.</em></p>
 </tr>
 </tbody>
 </table>
-<h4 id="return-values_4">Return Values</h4>
+<h4 id="return-values_6">Return Values</h4>
 <table>
 <thead>
 <tr>
@@ -1536,7 +1965,7 @@ The game must be in the pre-registration stage.</em></p>
 <pre><code class="language-solidity">function onERC1155BatchReceived(address operator, address from, uint256[] ids, uint256[] values, bytes data) external returns (bytes4)
 </code></pre>
 <p>validate receipt of ERC1155 batch transfer</p>
-<h4 id="parameters_10">Parameters</h4>
+<h4 id="parameters_12">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -1573,7 +2002,7 @@ The game must be in the pre-registration stage.</em></p>
 </tr>
 </tbody>
 </table>
-<h4 id="return-values_5">Return Values</h4>
+<h4 id="return-values_7">Return Values</h4>
 <table>
 <thead>
 <tr>
@@ -1616,6 +2045,247 @@ The game must be in the pre-registration stage.</em></p>
 <ul>
 <li>The unlocked balance of tokens._</li>
 </ul>
+<h2 id="imultipass">IMultipass</h2>
+<h3 id="resolverecord_1">resolveRecord</h3>
+<pre><code class="language-solidity">function resolveRecord(struct LibMultipass.NameQuery query) external view returns (bool, struct LibMultipass.Record)
+</code></pre>
+<h3 id="initializedomain_1">initializeDomain</h3>
+<pre><code class="language-solidity">function initializeDomain(address registrar, uint256 freeRegistrationsNumber, uint256 fee, bytes32 domainName, uint256 referrerReward, uint256 referralDiscount) external
+</code></pre>
+<p>_Initializes new LibMultipass.Domain and configures it's parameters</p>
+<p>Requirements:
+ registrar is not zero
+ domainName is not empty
+ domainIndex is either zero(auto assign) or can be one of preoccupied LibMultipass.Domain names
+ domainName does not exist yet
+ onlyOwner
+ referrerReward+referralDiscount cannot be larger than fee
+ @param registrar address of registrar
+ @param freeRegistrationsNumber number of registrations free of fee
+ @param fee fee in base currency of network
+ @param domainName name of LibMultipass.Domain
+ @param referrerReward referral fee share in base currency of network
+ @param referralDiscount referral discount in base currency of network</p>
+<p>Emits an {InitializedDomain} event._</p>
+<h3 id="activatedomain_1">activateDomain</h3>
+<pre><code class="language-solidity">function activateDomain(bytes32 domainName) external
+</code></pre>
+<p>_Activates LibMultipass.Domain name</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainActivated} event._</p>
+<h3 id="deactivatedomain_1">deactivateDomain</h3>
+<pre><code class="language-solidity">function deactivateDomain(bytes32 domainName) external
+</code></pre>
+<p>_Deactivates LibMultipass.Domain name</p>
+<p>Deactivated LibMultipass.Domain cannot mutate names and will return zeros</p>
+<p>Requirements:
+ msg.sender is Owner OR registrar</p>
+<p>Emits an {DomainDeactivated} event._</p>
+<h3 id="changefee_1">changeFee</h3>
+<pre><code class="language-solidity">function changeFee(bytes32 domainName, uint256 fee) external
+</code></pre>
+<p>_Changes registrar address</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainFeeChanged} event._</p>
+<h3 id="changeregistrar_1">changeRegistrar</h3>
+<pre><code class="language-solidity">function changeRegistrar(bytes32 domainName, address newRegistrar) external
+</code></pre>
+<p>_Changes registrar address</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {RegistrarChangeRequested} event._</p>
+<h3 id="deletename_1">deleteName</h3>
+<pre><code class="language-solidity">function deleteName(struct LibMultipass.NameQuery query) external
+</code></pre>
+<p>_deletes name</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainTTLChangeRequested} event._</p>
+<h3 id="changereferralprogram_1">changeReferralProgram</h3>
+<pre><code class="language-solidity">function changeReferralProgram(uint256 referrerFeeShare, uint256 referralDiscount, uint256 freeRegistrations, bytes32 domainName) external
+</code></pre>
+<p>_executes all pending changes to LibMultipass.Domain that fulfill TTL</p>
+<p>Requirements:
+ domainName must be set
+ referrerFeeShare+referralDiscount cannot be larger than 2^32</p>
+<p>Emits an {ReferralProgramChangeRequested} event._</p>
+<h3 id="register_1">register</h3>
+<pre><code class="language-solidity">function register(struct LibMultipass.Record newRecord, bytes32 domainName, bytes registrarSignature, uint256 signatureDeadline, struct LibMultipass.NameQuery referrer, bytes referralCode) external payable
+</code></pre>
+<p>_registers new name under LibMultipass.Domain</p>
+<p>Requirements:
+ all arguments must be set
+ domainName must be active
+resolveRecord for given arguments should return no LibMultipass.Record</p>
+<p>Emits an {registered} event._</p>
+<h3 id="modifyusername_1">modifyUserName</h3>
+<pre><code class="language-solidity">function modifyUserName(bytes32 domainName, struct LibMultipass.NameQuery query, bytes32 newName, bytes registrarSignature, uint256 signatureDeadline) external payable
+</code></pre>
+<p>_modifies exsisting LibMultipass.Record</p>
+<p>Requirements:
+resolveRecord for given arguments should return valid LibMultipass.Record
+LibMultipass.Domain must be active
+newAddress and newName should be set and be unique in current LibMultipass.Domain_</p>
+<h4 id="parameters_13">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>domainName</td>
+<td>bytes32</td>
+<td>LibMultipass.Domain</td>
+</tr>
+<tr>
+<td>query</td>
+<td>struct LibMultipass.NameQuery</td>
+<td></td>
+</tr>
+<tr>
+<td>newName</td>
+<td>bytes32</td>
+<td>new name  Emits an {Modified} event.</td>
+</tr>
+<tr>
+<td>registrarSignature</td>
+<td>bytes</td>
+<td></td>
+</tr>
+<tr>
+<td>signatureDeadline</td>
+<td>uint256</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getbalance_1">getBalance</h3>
+<pre><code class="language-solidity">function getBalance() external view returns (uint256)
+</code></pre>
+<p><em>returns balance of this contract</em></p>
+<h3 id="getdomainstate_1">getDomainState</h3>
+<pre><code class="language-solidity">function getDomainState(bytes32 domainName) external view returns (struct LibMultipass.Domain)
+</code></pre>
+<p><em>returns LibMultipass.Domain state variables</em></p>
+<h4 id="parameters_14">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>domainName</td>
+<td>bytes32</td>
+<td>name of the LibMultipass.Domain</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values_8">Return Values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>struct LibMultipass.Domain</td>
+<td>(name,       fee,       freeRegistrationsNumber,        referrerReward,        referralDiscount,        isActive,        registrar,        ttl,         registerSize)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getcontractstate_2">getContractState</h3>
+<pre><code class="language-solidity">function getContractState() external view returns (uint256)
+</code></pre>
+<p><em>returns contract state variables</em></p>
+<h4 id="return-values_9">Return Values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>uint256</td>
+<td>(s_numDomains)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="withrawfunds_1">withrawFunds</h3>
+<pre><code class="language-solidity">function withrawFunds(address to) external
+</code></pre>
+<p>_Withraws funds stored in smart contract</p>
+<p>Requirements:
+ onlyOwner</p>
+<p>Emits an {fundsWithdawn} event._</p>
+<h3 id="getmodifyprice_1">getModifyPrice</h3>
+<pre><code class="language-solidity">function getModifyPrice(struct LibMultipass.NameQuery query) external view returns (uint256)
+</code></pre>
+<h3 id="fundswithdawn">fundsWithdawn</h3>
+<pre><code class="language-solidity">event fundsWithdawn(uint256 amount, address account)
+</code></pre>
+<h3 id="initializeddomain">InitializedDomain</h3>
+<pre><code class="language-solidity">event InitializedDomain(address registrar, uint256 freeRegistrationsNumber, uint256 fee, bytes32 domainName, uint256 referrerReward, uint256 referralDiscount)
+</code></pre>
+<h3 id="domainactivated">DomainActivated</h3>
+<pre><code class="language-solidity">event DomainActivated(bytes32 domainName)
+</code></pre>
+<h3 id="domaindeactivated">DomainDeactivated</h3>
+<pre><code class="language-solidity">event DomainDeactivated(bytes32 domainName)
+</code></pre>
+<h3 id="domainfeechanged">DomainFeeChanged</h3>
+<pre><code class="language-solidity">event DomainFeeChanged(bytes32 domainName, uint256 newFee)
+</code></pre>
+<h3 id="freeregistrationschanged">FreeRegistrationsChanged</h3>
+<pre><code class="language-solidity">event FreeRegistrationsChanged(uint256 domainIndex, uint256 newAmount)
+</code></pre>
+<h3 id="registrarchangerequested">RegistrarChangeRequested</h3>
+<pre><code class="language-solidity">event RegistrarChangeRequested(bytes32 domainName, address registrar)
+</code></pre>
+<h3 id="domainnamechangerequested">DomainNameChangeRequested</h3>
+<pre><code class="language-solidity">event DomainNameChangeRequested(uint256 domainIndex, bytes32 NewDomainName)
+</code></pre>
+<h3 id="namedeleted">nameDeleted</h3>
+<pre><code class="language-solidity">event nameDeleted(bytes32 domainName, address wallet, bytes32 id, bytes32 name)
+</code></pre>
+<h3 id="domainttlchangerequested">DomainTTLChangeRequested</h3>
+<pre><code class="language-solidity">event DomainTTLChangeRequested(bytes32 domainName, uint256 amount)
+</code></pre>
+<h3 id="referralprogramchanged">ReferralProgramChanged</h3>
+<pre><code class="language-solidity">event ReferralProgramChanged(bytes32 domainName, uint256 reward, uint256 discount, uint256 freeNumber)
+</code></pre>
+<h3 id="domainchangesarelive">DomainChangesAreLive</h3>
+<pre><code class="language-solidity">event DomainChangesAreLive(bytes32 domainName, bytes32[] changes)
+</code></pre>
+<h3 id="changesqeuecanceled">changesQeueCanceled</h3>
+<pre><code class="language-solidity">event changesQeueCanceled(bytes32 domainName, bytes32[] changes)
+</code></pre>
+<h3 id="registered">Registered</h3>
+<pre><code class="language-solidity">event Registered(bytes32 domainName, struct LibMultipass.Record NewRecord)
+</code></pre>
+<h3 id="referred">Referred</h3>
+<pre><code class="language-solidity">event Referred(struct LibMultipass.Record refferrer, struct LibMultipass.Record newRecord, bytes32 domainName)
+</code></pre>
+<h3 id="userrecordmodified">UserRecordModified</h3>
+<pre><code class="language-solidity">event UserRecordModified(struct LibMultipass.Record newRecord, bytes32 oldName, bytes32 domainName)
+</code></pre>
 <h2 id="iranktoken">IRankToken</h2>
 <h3 id="rankinginstanceupdated">RankingInstanceUpdated</h3>
 <pre><code class="language-solidity">event RankingInstanceUpdated(address newRankingInstance)
@@ -1997,6 +2667,167 @@ This library most functionality has been tested: see ../tests/LibCoinVending.ts 
 </code></pre>
 <h3 id="eip712withstorage">EIP712WithStorage</h3>
 <pre><code class="language-solidity">function EIP712WithStorage() internal pure returns (struct LibEIP712WithStorage.LibEIP712WithStorageStorage ds)
+</code></pre>
+<h2 id="libmultipass">LibMultipass</h2>
+<h3 id="namequery">NameQuery</h3>
+<p><em>resolves user from any given argument
+Requirements:
+ domainName must be given and must be initialized
+ id OR username OR address must be given
+This method first tries to resolve by address, then by user id and finally by username</em></p>
+<h4 id="parameters_15">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-solidity">struct NameQuery {
+  bytes32 domainName;
+  address wallet;
+  bytes32 name;
+  bytes32 id;
+  bytes32 targetDomain;
+}
+</code></pre>
+<h3 id="domain">Domain</h3>
+<p><em>The domain name of the registrar.</em></p>
+<h4 id="parameters_16">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-solidity">struct Domain {
+  bytes32 name;
+  uint256 fee;
+  uint256 freeRegistrationsNumber;
+  uint256 referrerReward;
+  uint256 referralDiscount;
+  bool isActive;
+  address registrar;
+  uint24 ttl;
+  uint256 registerSize;
+}
+</code></pre>
+<h3 id="record">Record</h3>
+<pre><code class="language-solidity">struct Record {
+  address wallet;
+  bytes32 name;
+  bytes32 id;
+  uint96 nonce;
+  bytes32 domainName;
+}
+</code></pre>
+<h3 id="multipass_storage_position">MULTIPASS_STORAGE_POSITION</h3>
+<pre><code class="language-solidity">bytes32 MULTIPASS_STORAGE_POSITION
+</code></pre>
+<h3 id="domainnameservice">DomainNameService</h3>
+<p><em>The domain name of the registrar.</em></p>
+<h4 id="parameters_17">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-solidity">struct DomainNameService {
+  struct LibMultipass.Domain properties;
+  mapping(bytes32 =&gt; address) idToAddress;
+  mapping(bytes32 =&gt; uint96) nonce;
+  mapping(address =&gt; bytes32) addressToId;
+  mapping(bytes32 =&gt; bytes32) nameToId;
+  mapping(bytes32 =&gt; bytes32) idToName;
+}
+</code></pre>
+<h3 id="multipassstoragestruct">MultipassStorageStruct</h3>
+<pre><code class="language-solidity">struct MultipassStorageStruct {
+  mapping(uint256 =&gt; struct LibMultipass.DomainNameService) domains;
+  mapping(bytes32 =&gt; uint256) domainNameToIndex;
+  uint256 numDomains;
+}
+</code></pre>
+<h3 id="multipassstorage">MultipassStorage</h3>
+<pre><code class="language-solidity">function MultipassStorage() internal pure returns (struct LibMultipass.MultipassStorageStruct es)
+</code></pre>
+<h3 id="_typehash">_TYPEHASH</h3>
+<pre><code class="language-solidity">bytes32 _TYPEHASH
+</code></pre>
+<h3 id="_typehash_referral">_TYPEHASH_REFERRAL</h3>
+<pre><code class="language-solidity">bytes32 _TYPEHASH_REFERRAL
+</code></pre>
+<h3 id="_checkstringfits32b">_checkStringFits32b</h3>
+<pre><code class="language-solidity">function _checkStringFits32b(string value) internal pure returns (bool)
+</code></pre>
+<h3 id="_checknotempty">_checkNotEmpty</h3>
+<pre><code class="language-solidity">function _checkNotEmpty(bytes32 value) internal pure returns (bool)
+</code></pre>
+<h3 id="resolvedomainindex">resolveDomainIndex</h3>
+<pre><code class="language-solidity">function resolveDomainIndex(bytes32 domainName) internal view returns (uint256)
+</code></pre>
+<h3 id="_getdomainstorage">_getDomainStorage</h3>
+<pre><code class="language-solidity">function _getDomainStorage(bytes32 domainName) internal view returns (struct LibMultipass.DomainNameService)
+</code></pre>
+<h3 id="_initializedomain">_initializeDomain</h3>
+<pre><code class="language-solidity">function _initializeDomain(address registrar, uint256 freeRegistrationsNumber, uint256 fee, bytes32 domainName, uint256 referrerReward, uint256 referralDiscount) internal
+</code></pre>
+<h3 id="_getmodifyprice">_getModifyPrice</h3>
+<pre><code class="language-solidity">function _getModifyPrice(struct LibMultipass.Record userRecord) internal view returns (uint256)
+</code></pre>
+<h3 id="resolverecord_2">resolveRecord</h3>
+<pre><code class="language-solidity">function resolveRecord(struct LibMultipass.NameQuery query) internal view returns (bool, struct LibMultipass.Record)
+</code></pre>
+<p><em>resolves Record of name query in to status and identity</em></p>
+<h3 id="_setrecord">_setRecord</h3>
+<pre><code class="language-solidity">function _setRecord(struct LibMultipass.DomainNameService domain, struct LibMultipass.Record record) internal
+</code></pre>
+<p><em>this function bears no security checks, it will ignore nonce in arg and will increment
+  nonce value stored in domain instread</em></p>
+<h3 id="queryfromrecord">queryFromRecord</h3>
+<pre><code class="language-solidity">function queryFromRecord(struct LibMultipass.Record _record, bytes32 _domainName) internal pure returns (struct LibMultipass.NameQuery)
+</code></pre>
+<h3 id="shouldregisterforfree">shouldRegisterForFree</h3>
+<pre><code class="language-solidity">function shouldRegisterForFree(struct LibMultipass.DomainNameService domain) internal view returns (bool)
+</code></pre>
+<h3 id="_registernew">_registerNew</h3>
+<pre><code class="language-solidity">function _registerNew(struct LibMultipass.Record newRecord, struct LibMultipass.DomainNameService domain) internal
+</code></pre>
+<h3 id="_getcontractstate">_getContractState</h3>
+<pre><code class="language-solidity">function _getContractState() internal view returns (uint256)
+</code></pre>
+<h3 id="_getdomainstoragebyidx">_getDomainStorageByIdx</h3>
+<pre><code class="language-solidity">function _getDomainStorageByIdx(uint256 index) internal view returns (struct LibMultipass.DomainNameService)
 </code></pre>
 <h2 id="quadraticvotingerror">quadraticVotingError</h2>
 <pre><code class="language-solidity">error quadraticVotingError(string paramter, uint256 arg, uint256 arg2)
@@ -2439,9 +3270,8 @@ It is designed to be used as a base library for games, and provides the followin
 <p>Requirements:</p>
 <ul>
 <li><code>gameId</code> must not be zero.</li>
-<li>The game with <code>gameId</code> must have started.</li>
+<li>The game with <code>gameId</code> must have started._</li>
 </ul>
-<p><strong><em>WARNING</em></strong> This function is unused in the current implementation of the library._</p>
 <h3 id="canendturnearly">canEndTurnEarly</h3>
 <pre><code class="language-solidity">function canEndTurnEarly(uint256 gameId) internal view returns (bool)
 </code></pre>
@@ -2633,6 +3463,9 @@ By "early" it is assumed that time to join has not yet passed, but it's already 
 <li>Sets the madeMove of <code>player</code> in the game with <code>gameId</code> to true.</li>
 <li>Increments the numPlayersMadeMove of the game with <code>gameId</code>._</li>
 </ul>
+<h3 id="isplayerturncomplete_1">isPlayerTurnComplete</h3>
+<pre><code class="language-solidity">function isPlayerTurnComplete(uint256 gameId, address player) internal view returns (bool)
+</code></pre>
 <h3 id="enforceisplayinggame">enforceIsPlayingGame</h3>
 <pre><code class="language-solidity">function enforceIsPlayingGame(uint256 gameId, address player) internal view
 </code></pre>
@@ -2891,8 +3724,8 @@ will be burned.</li>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Welcome to MkDocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../specs/IAppFactory/" class="btn btn-neutral float-right" title="App factory">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../interfaces/" class="btn btn-neutral float-left" title="Factory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../specifications/IAppFactory/" class="btn btn-neutral float-right" title="App factory">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -2914,18 +3747,23 @@ will be burned.</li>
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+      <span><a href="../interfaces/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../specs/IAppFactory/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../specifications/IAppFactory/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
