@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/architecure/specifications/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Specifications - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Specifications";
+        var mkdocs_page_input_path = "architecure/specifications.md";
+        var mkdocs_page_url = "/architecure/specifications/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/">Rankify Basics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Specifications</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#functional-requirements">Functional requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#repositories">Repositories</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#registry-tbd">Registry [TBD]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cells-tbd">Cells [TBD]</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#rank-nft">Rank NFT</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#governance-token-tbd">Governance Token [TBD]</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#app-instances">App Instances</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#installer">Installer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#instance-tbd">Instance [TBD]</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#security-requirements">Security requirements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dao-owned-repository">DAO Owned Repository</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rankify-multisig">Rankify Multisig</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#app-instances_1">App Instances</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#installer-tbd">Installer [TBD]</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Interfaces</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../interfaces/solidity-api/">Solidity API</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Specifications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../specifications/IAppFactory/">App factory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../specifications/ManagedAssetFactory/">Managed Asset Factory</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Architecure</li>
+      <li class="breadcrumb-item active">Specifications</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/architecure/specifications.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link">#</a></h1>
+<p>This document outlines the detailed specifications for our project. Each section in this document corresponds to a different component of the system and is further divided into two categories: Functional Requirements and Security Requirements.</p>
+<ul>
+<li>
+<p><strong>Functional Requirements</strong>: define the functionality that a system or system component must be able to perform. They describe what the system should do and include specifications for features, capabilities, and operational constraints.</p>
+</li>
+<li>
+<p><strong>Security Requirements</strong>: define the measures that are needed to protect the system from potential threats. They often involve access control, data protection, and system integrity. Security requirements are given per implementation given the context of the implementations as these requirements are not universal.</p>
+</li>
+</ul>
+<!-- ## App Store -->
+
+<!-- ### Repository
+
+### Functional
+
+- Must implement [IVFactory.sol](https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IVRepoFactory.sol)
+- It allows only Rankify Multisig to access non-read interface methods
+- It must emit `createRepo` when non-read interface methods are called
+- Calling non-read interface methods must return address to newly created `IRepository`
+
+### Security
+
+- Factory implementation owed by Rankify DAO
+- It must allow multiple -->
+
+<h2 id="functional-requirements">Functional requirements<a class="headerlink" href="#functional-requirements" title="Permanent link">#</a></h2>
+<h3 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">#</a></h3>
+<!-- ### Functional -->
+
+<p>Functional interface requirements are described in <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepository.sol">IRepository</a>, functionality must fulfill following unit tests:</p>
+<ul>
+<li>It emits <code>VersionCreated</code> when <code>createVersion</code> is called successfully</li>
+<li>It reverts with <code>InvalidReleaseIncrement</code> if a release number is incremented by more than one</li>
+<li>It reverts with <code>ReleaseZeroNotAllowed</code> if a release number is set to zero in <code>createVersion</code></li>
+<li>When no release nor version exists:<ul>
+<li>It reverts with <code>VersionHashDoesNotExist</code>if <code>getVersion</code> is called</li>
+<li>It reverts with <code>ReleaseDoesNotExist</code> if <code>updateReleaseMetadata</code> is called</li>
+<li>It returns zero if <code>latestRelease</code> is called on repository with no releases</li>
+<li>It returns zero if <code>buildCount</code> is called on repository with no releases</li>
+<li>It reverts with <code>VersionHashDoesNotExist</code> if called <code>getLatestVersion(address)</code></li>
+<li>It reverts with <code>ReleaseDoesNotExist</code> if called <code>getLatestVersion(uint8)</code></li>
+</ul>
+</li>
+<li>When version and release exists:<ul>
+<li>It reverts with <code>AlreadyInPreviousRelease</code> if <code>createVersion</code> if the same source address</li>
+<li>It returns correct release count for given major version upon calling <code>buildCount</code></li>
+<li>It returns correct <code>Version</code> if <code>getVersion</code> is called with valid major and minor version</li>
+<li>It returns correct <code>Version</code> if <code>getLatestVersion(address)</code> is called</li>
+<li>It returns correct <code>Version</code> if <code>getLatestVersion(uint8)</code> is called</li>
+<li>It emits <code>ReleaseMetadataUpdated</code> when <code>updateReleaseMetadata</code> is called successfully</li>
+</ul>
+</li>
+</ul>
+<h3 id="registry-tbd">Registry [TBD]<a class="headerlink" href="#registry-tbd" title="Permanent link">#</a></h3>
+<h3 id="cells-tbd">Cells [TBD]<a class="headerlink" href="#cells-tbd" title="Permanent link">#</a></h3>
+<h4 id="rank-nft">Rank NFT<a class="headerlink" href="#rank-nft" title="Permanent link">#</a></h4>
+<ul>
+<li>Must implement <a href="https://docs.opensea.io/docs/metadata-standards">OpenSea compatible uri format</a> that can resolve to title, Description and image</li>
+<li>Must allow only owner to modify metadata</li>
+<li>May implement additional <a href="https://github.com/rankify-it/contracts/blob/main/src/interfaces/IRankToken.sol">IRankToken</a> interface</li>
+</ul>
+<h3 id="governance-token-tbd">Governance Token [TBD]<a class="headerlink" href="#governance-token-tbd" title="Permanent link">#</a></h3>
+<h3 id="app-instances">App Instances<a class="headerlink" href="#app-instances" title="Permanent link">#</a></h3>
+<h4 id="installer">Installer<a class="headerlink" href="#installer" title="Permanent link">#</a></h4>
+<p>installer must implement <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepoInstaller.sol">IRepoInstaller</a> interface, functionality must fulfill following unit tests:</p>
+<ul>
+<li>it emits <code>RepositoryAdded</code> if <code>addRepository</code> is called successfully.</li>
+<li>it emits <code>Instantiated</code> if <code>instantiate</code> is called successfully.</li>
+<li>it reverts with <code>RepositoryDoesNotExist</code> if <code>instantiate</code> is called with non-existing repository.</li>
+<li>it reverts with <code>VersionDoesNotMatchRequirement</code> if <code>instantiate</code> version does not match.</li>
+<li>it emits <code>Repositor</code>Removed<code>when</code>removeRepository` is called successfully.</li>
+<li>it emits <code>Instantiated</code> if <code>instantiateLatest</code> is called successfully.</li>
+<li>it reverts with <code>RepositoryDoesNotExist</code> if <code>instantiateLatest</code> is called with non-existing repository.</li>
+<li>when repository already exists:<ul>
+<li>it emits <code>RepositoryRequirementUpdated</code> if <code>addRepository</code> is called successfully with already existing repository.</li>
+</ul>
+</li>
+<li>when <code>RepositoryRequirementUpdated</code> was emitted:<ul>
+<li>it reverts with <code>VersionDoesNotMatchRequirement</code> if instance version does not match requirement anymore.</li>
+<li>it emits <code>Upgraded</code> if <code>upgrade</code> is called successfully.</li>
+<li>it reverts with <code>VersionDoesNotMatchRequirement</code> if <code>upgrade</code> is called with version that does not match the required version.</li>
+</ul>
+</li>
+<li>It returns correct <code>Repository</code> if <code>getRepository</code> is called with valid instance address</li>
+<li>It returns all instances of a repository if <code>getInstances</code> is called with valid repository address</li>
+<li>It returns all active repositories if <code>getRepositories</code> is called</li>
+<li>It returns version tag if <code>getVersion</code> is called with valid instance address</li>
+<li>It returns <code>VersionRequirement</code> if <code>getVersionRequirement</code> is called with valid instance address</li>
+<li>It reverts with <code>InstanceDoesNotExist</code> if <code>getVersionRequirement</code> is called with non-existing instance address</li>
+<li>It reverts with <code>InstanceDoesNotExist</code> if <code>getVersion</code> is called with non-existing instance address</li>
+<li>It reverts with <code>RepositoryDoesNotExist</code> if <code>getRepository</code> is called with non-existing instance address</li>
+<li>It reverts with <code>RepositoryDoesNotExist</code> if <code>getInstances</code> is called with non-existing repository address</li>
+</ul>
+<h3 id="instance-tbd">Instance [TBD]<a class="headerlink" href="#instance-tbd" title="Permanent link">#</a></h3>
+<h2 id="security-requirements">Security requirements<a class="headerlink" href="#security-requirements" title="Permanent link">#</a></h2>
+<p>Security specifications outlined per contract instance are implementation agnostic. They are meant to be implemented in a way that is most suitable for the given context. Following definitions extend <a href="https://www.ietf.org/rfc/rfc2119.html">ERC-2119</a> definitions:</p>
+<ul>
+<li><strong>Access point</strong>: A function or method that is part of the protected contract's interface.</li>
+<li><strong>WHITELIST</strong>: Set of addresses that are explicitly allowed on certain access points.</li>
+<li><strong>BLACKLIST</strong>: Set addresses that are explicitly disallowed on certain access points.</li>
+<li><strong>RESTRICTED</strong>: An access point that MUST enforce WHITELIST.</li>
+<li><strong>UNRESTRICTED</strong>: An access point that MAY enforce BLACKLIST.</li>
+</ul>
+<!-- For every contract that is part of our infrastructure a modifier must be provided that can take full call data that includes `msg.data`, `msg.sender`, `msg.value` and `msg.sig`. This modifier must be used to implement security requirements by calling external security contract.
+
+The modifier must reside on contract that manages state -->
+
+<h3 id="dao-owned-repository">DAO Owned Repository<a class="headerlink" href="#dao-owned-repository" title="Permanent link">#</a></h3>
+<p>DAO controlled functional <a href="./#functional-requirements">Repository</a> must fulfill following security requirements:</p>
+<ul>
+<li>All non-read methods are RESTRICTED, where only WHITELIST member is <a href="./#rankify-multisig">Rankify Multisig</a></li>
+<li><a href="./#rankify-multisig">Rankify Multisig</a> MAY assign WHITELIST members to each access point individually</li>
+<li><a href="./#rankify-multisig">Rankify Multisig</a> MAY revoke WHITELIST members from each access point individually</li>
+<li>All read methods are UNRESTRICTED, with no BLACKLIST members</li>
+<li>No one may modify security settings except <a href="./#rankify-multisig">Rankify Multisig</a></li>
+<li><a href="./#rankify-multisig">Rankify Multisig</a> MAY transfer it's privileges to another account</li>
+</ul>
+<h3 id="rankify-multisig">Rankify Multisig<a class="headerlink" href="#rankify-multisig" title="Permanent link">#</a></h3>
+<p>Multisig controlled functional <a href="https://github.com/safe-global/safe-smart-account/blob/main/contracts/interfaces/ISafe.sol">Safe Wallet</a></p>
+<ul>
+<li>Initially deployed with a single signer and 1-of-1, Rankify DAO signer</li>
+<li>Rankify DAO signer MAY add or remove signers</li>
+<li>Rankify DAO signer MAY change the threshold</li>
+<li>Rankify DAO signer MAY revoke it's own signer status</li>
+</ul>
+<h3 id="app-instances_1">App Instances<a class="headerlink" href="#app-instances_1" title="Permanent link">#</a></h3>
+<h4 id="installer-tbd">Installer [TBD]<a class="headerlink" href="#installer-tbd" title="Permanent link">#</a></h4>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Smart contract infrastructure"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../interfaces/solidity-api/" class="btn btn-neutral float-right" title="Solidity API">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../interfaces/solidity-api/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

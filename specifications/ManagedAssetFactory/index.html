@@ -52,17 +52,15 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Welcome/tokens/">Token types</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Architecure overview</span></p>
+              <p class="caption"><span class="caption-text">Architecure</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../architecure%20overview/">Smart contract infrastructure</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../architecure/">Smart contract infrastructure</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../architecure%20overview/specifications/">Specifications</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../architecure/specifications/">Specifications</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Interfaces</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../interfaces/interfaces/">Factory</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../interfaces/solidity-api/">Solidity API</a>
                   </li>
               </ul>
@@ -116,18 +114,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="managed-asset-factory">Managed Asset Factory</h1>
-<h2 id="abstract">Abstract</h2>
+                <h1 id="managed-asset-factory">Managed Asset Factory<a class="headerlink" href="#managed-asset-factory" title="Permanent link">#</a></h1>
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">#</a></h2>
 <p>Producer is a smart contract that is able to deploy(produce) asset contracts and asset management contracts from one, versioned and trusted implementation factory-like source. It allows an asset emission to be controlled by multiple management contracts by being an asset emitter himself who only can does this on behalf of registered management contract.
 Such contract allows to have single registry of multiple assets each of whose is known to behave according to same logical constraints of trusted implementation of management instances that only differ with instantiation constructor argument differences.</p>
-<h2 id="motivation">Motivation</h2>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">#</a></h2>
 <p>Rating systems often are based on some quantitative representation for participants strengths and can be often expressed as an integer number selected so that minimum resolution can describe ratings granularly enough particular application. In practice forming tournaments, payment tiers etc however such granularity often is being reduced by quantizing participant ratings to some less granular groupings.
 For example in chess, FIDE used <a href="https://en.wikipedia.org/wiki/Chess_rating_system">Elo</a> rating system will use scale that defined in boundaries of [1000,2700]. FIDE will also <a href="https://handbook.fide.com/">quantize</a> these values in to categories each being 25 points wide to form tournament game groups. It will also specify that awarded titles, such as "Grand-Master" requires rating over a threshold.</p>
 <p>With bloom of meta-verse philosophy it seem to be valuable to be able to define such rating system agnostic from any particular implementation and organization, rather as modular and generic aggregator for different ratings, hence enabling cross-stream collaboration and convenient way of sharing, querying ratings as well as the quantization values that represent distinct, principal quality difference.</p>
 <p>In order to build such an asset system, where each would be capable representing a category for some matter in united and global registry existing token ERC1155 standard can be utilized. To link those together some kind of trusted registry is needed that can manage such coupled assets and create cross-domain trust.</p>
-<h2 id="specification">Specification</h2>
+<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">#</a></h2>
 <p>Assets and asset management logic are separated and are pre-defined as factory templates, that allow instantiating party only pass in arbitrary constructor arguments as customization properties. Whenever a management contract needs to call privileged method on the asset, it calls Factory Asset Manager which forwards call.</p>
-<h3 id="definitions">Definitions</h3>
+<h3 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>Asset</strong>: An ERC1155 contract that represents a matter</li>
 <li><strong>Asset manager</strong>: An arbitrary contract that can manage one particular asset</li>
@@ -135,7 +133,7 @@ For example in chess, FIDE used <a href="https://en.wikipedia.org/wiki/Chess_rat
 <li><strong>Instance</strong>: A factory deployment, it may be either asset or asset manager</li>
 <li><strong>Template</strong>: A reference code that is used to produce instances</li>
 </ul>
-<h3 id="requirements">Requirements</h3>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h3>
 <ul>
 <li>Must deploy asset Manager with exactly one asset assigned.</li>
 <li>Must allow multiple Managers to manage same asset.</li>
@@ -156,7 +154,7 @@ For example in chess, FIDE used <a href="https://en.wikipedia.org/wiki/Chess_rat
 <li>Must store in the registry and return Manager Template Id</li>
 <li>Must store in the registry and return Managers asset address</li>
 </ul>
-<h3 id="interface">Interface</h3>
+<h3 id="interface">Interface<a class="headerlink" href="#interface" title="Permanent link">#</a></h3>
 <pre><code class="language-solidity">interface IFactoryAssetsManager {
   function deployAsset(bytes32 assetUri, bytes32 assetType, bytes calldata instantiationPayload) external;
 
@@ -176,7 +174,7 @@ For example in chess, FIDE used <a href="https://en.wikipedia.org/wiki/Chess_rat
   event AssetManagerDeployed(address indexed asset, address indexed manager, bytes32 indexed strategyId);
 }
 </code></pre>
-<h2 id="rationale">Rationale</h2>
+<h2 id="rationale">Rationale<a class="headerlink" href="#rationale" title="Permanent link">#</a></h2>
 <p><strong>Combining asset factory with manager instance factory</strong> - It could be possible to isolate functionality in two different contracts. Such design would imply that rank token factory may be called by either owner or game instance factory. Hence they are sharing same security level, and since factory deploys instances already tied to a particular rank token, they would become decoupled from token factory in case if token factory was swapped. Same can be achieved by deploying one factory as diamond contract and using Instance &amp; Token deployments factory</p>
               
             </div>

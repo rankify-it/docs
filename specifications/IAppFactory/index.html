@@ -52,17 +52,15 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../Welcome/tokens/">Token types</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Architecure overview</span></p>
+              <p class="caption"><span class="caption-text">Architecure</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../architecure%20overview/">Smart contract infrastructure</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../architecure/">Smart contract infrastructure</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../architecure%20overview/specifications/">Specifications</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../architecure/specifications/">Specifications</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Interfaces</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../interfaces/interfaces/">Factory</a>
-                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../interfaces/solidity-api/">Solidity API</a>
                   </li>
               </ul>
@@ -106,12 +104,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="app-factory">App factory</h1>
-<h3 id="requirements">Requirements</h3>
+                <h1 id="app-factory">App factory<a class="headerlink" href="#app-factory" title="Permanent link">#</a></h1>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h3>
 <ul>
 <li>Must allow anyone</li>
 </ul>
-<h3 id="interface">Interface</h3>
+<h3 id="interface">Interface<a class="headerlink" href="#interface" title="Permanent link">#</a></h3>
 <pre><code class="language-solidity">interface IFactoryAssetsManager {
   function deployAsset(bytes32 assetUri, bytes32 assetType, bytes calldata instantiationPayload) external;
 
@@ -131,7 +129,7 @@
   event AssetManagerDeployed(address indexed asset, address indexed manager, bytes32 indexed strategyId);
 }
 </code></pre>
-<h2 id="rationale">Rationale</h2>
+<h2 id="rationale">Rationale<a class="headerlink" href="#rationale" title="Permanent link">#</a></h2>
 <p><strong>Combining asset factory with manager instance factory</strong> - It could be possible to isolate functionality in two different contracts. Such design would imply that rank token factory may be called by either owner or game instance factory. Hence they are sharing same security level, and since factory deploys instances already tied to a particular rank token, they would become decoupled from token factory in case if token factory was swapped. Same can be achieved by deploying one factory as diamond contract and using Instance &amp; Token deployments factory</p>
               
             </div>
