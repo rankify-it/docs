@@ -1,0 +1,3 @@
+# Essential Libraries
+python-dotenv>=0.20.0  # Load environment variables from .env file (if you use one)
+mkdocs_puml>=1.3.1 # Generate UML diagrams from text
