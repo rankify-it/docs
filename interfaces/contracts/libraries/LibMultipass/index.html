@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/interfaces/contracts/libraries/LibMultipass/" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Solidity API - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Solidity API";
+        var mkdocs_page_input_path = "interfaces/contracts/libraries/LibMultipass.md";
+        var mkdocs_page_url = "/interfaces/contracts/libraries/LibMultipass/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../*">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Solidity API</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/interfaces/contracts/libraries/LibMultipass.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="solidity-api">Solidity API<a class="headerlink" href="#solidity-api" title="Permanent link">#</a></h1>
+<h2 id="libmultipass">LibMultipass<a class="headerlink" href="#libmultipass" title="Permanent link">#</a></h2>
+<h3 id="namequery">NameQuery<a class="headerlink" href="#namequery" title="Permanent link">#</a></h3>
+<p><em>resolves user from any given argument
+Requirements:
+ domainName must be given and must be initialized
+ id OR username OR address must be given
+This method first tries to resolve by address, then by user id and finally by username</em></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-solidity">struct NameQuery {
+  bytes32 domainName;
+  address wallet;
+  bytes32 name;
+  bytes32 id;
+  bytes32 targetDomain;
+}</code></pre>
+<h3 id="domain">Domain<a class="headerlink" href="#domain" title="Permanent link">#</a></h3>
+<p><em>The domain name of the registrar.</em></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-solidity">struct Domain {
+  bytes32 name;
+  uint256 fee;
+  uint256 freeRegistrationsNumber;
+  uint256 referrerReward;
+  uint256 referralDiscount;
+  bool isActive;
+  address registrar;
+  uint24 ttl;
+  uint256 registerSize;
+}</code></pre>
+<h3 id="record">Record<a class="headerlink" href="#record" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">struct Record {
+  address wallet;
+  bytes32 name;
+  bytes32 id;
+  uint96 nonce;
+  bytes32 domainName;
+}</code></pre>
+<h3 id="multipass_storage_position">MULTIPASS_STORAGE_POSITION<a class="headerlink" href="#multipass_storage_position" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">bytes32 MULTIPASS_STORAGE_POSITION</code></pre>
+<h3 id="domainnameservice">DomainNameService<a class="headerlink" href="#domainnameservice" title="Permanent link">#</a></h3>
+<p><em>The domain name of the registrar.</em></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-solidity">struct DomainNameService {
+  struct LibMultipass.Domain properties;
+  mapping(bytes32 =&gt; address) idToAddress;
+  mapping(bytes32 =&gt; uint96) nonce;
+  mapping(address =&gt; bytes32) addressToId;
+  mapping(bytes32 =&gt; bytes32) nameToId;
+  mapping(bytes32 =&gt; bytes32) idToName;
+}</code></pre>
+<h3 id="multipassstoragestruct">MultipassStorageStruct<a class="headerlink" href="#multipassstoragestruct" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">struct MultipassStorageStruct {
+  mapping(uint256 =&gt; struct LibMultipass.DomainNameService) domains;
+  mapping(bytes32 =&gt; uint256) domainNameToIndex;
+  uint256 numDomains;
+}</code></pre>
+<h3 id="multipassstorage">MultipassStorage<a class="headerlink" href="#multipassstorage" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function MultipassStorage() internal pure returns (struct LibMultipass.MultipassStorageStruct es)</code></pre>
+<h3 id="_typehash">_TYPEHASH<a class="headerlink" href="#_typehash" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">bytes32 _TYPEHASH</code></pre>
+<h3 id="_typehash_referral">_TYPEHASH_REFERRAL<a class="headerlink" href="#_typehash_referral" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">bytes32 _TYPEHASH_REFERRAL</code></pre>
+<h3 id="_checkstringfits32b">_checkStringFits32b<a class="headerlink" href="#_checkstringfits32b" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _checkStringFits32b(string value) internal pure returns (bool)</code></pre>
+<h3 id="_checknotempty">_checkNotEmpty<a class="headerlink" href="#_checknotempty" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _checkNotEmpty(bytes32 value) internal pure returns (bool)</code></pre>
+<h3 id="resolvedomainindex">resolveDomainIndex<a class="headerlink" href="#resolvedomainindex" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function resolveDomainIndex(bytes32 domainName) internal view returns (uint256)</code></pre>
+<h3 id="_getdomainstorage">_getDomainStorage<a class="headerlink" href="#_getdomainstorage" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _getDomainStorage(bytes32 domainName) internal view returns (struct LibMultipass.DomainNameService)</code></pre>
+<h3 id="_initializedomain">_initializeDomain<a class="headerlink" href="#_initializedomain" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _initializeDomain(address registrar, uint256 freeRegistrationsNumber, uint256 fee, bytes32 domainName, uint256 referrerReward, uint256 referralDiscount) internal</code></pre>
+<h3 id="_getmodifyprice">_getModifyPrice<a class="headerlink" href="#_getmodifyprice" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _getModifyPrice(struct LibMultipass.Record userRecord) internal view returns (uint256)</code></pre>
+<h3 id="resolverecord">resolveRecord<a class="headerlink" href="#resolverecord" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function resolveRecord(struct LibMultipass.NameQuery query) internal view returns (bool, struct LibMultipass.Record)</code></pre>
+<p><em>resolves Record of name query in to status and identity</em></p>
+<h3 id="_setrecord">_setRecord<a class="headerlink" href="#_setrecord" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _setRecord(struct LibMultipass.DomainNameService domain, struct LibMultipass.Record record) internal</code></pre>
+<p><em>this function bears no security checks, it will ignore nonce in arg and will increment
+  nonce value stored in domain instread</em></p>
+<h3 id="queryfromrecord">queryFromRecord<a class="headerlink" href="#queryfromrecord" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function queryFromRecord(struct LibMultipass.Record _record, bytes32 _domainName) internal pure returns (struct LibMultipass.NameQuery)</code></pre>
+<h3 id="shouldregisterforfree">shouldRegisterForFree<a class="headerlink" href="#shouldregisterforfree" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function shouldRegisterForFree(struct LibMultipass.DomainNameService domain) internal view returns (bool)</code></pre>
+<h3 id="_registernew">_registerNew<a class="headerlink" href="#_registernew" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _registerNew(struct LibMultipass.Record newRecord, struct LibMultipass.DomainNameService domain) internal</code></pre>
+<h3 id="_getcontractstate">_getContractState<a class="headerlink" href="#_getcontractstate" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _getContractState() internal view returns (uint256)</code></pre>
+<h3 id="_getdomainstoragebyidx">_getDomainStorageByIdx<a class="headerlink" href="#_getdomainstoragebyidx" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _getDomainStorageByIdx(uint256 index) internal view returns (struct LibMultipass.DomainNameService)</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

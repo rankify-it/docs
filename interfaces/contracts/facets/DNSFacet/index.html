@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/interfaces/contracts/facets/DNSFacet/" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Solidity API - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Solidity API";
+        var mkdocs_page_input_path = "interfaces/contracts/facets/DNSFacet.md";
+        var mkdocs_page_url = "/interfaces/contracts/facets/DNSFacet/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../*">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Solidity API</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/interfaces/contracts/facets/DNSFacet.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="solidity-api">Solidity API<a class="headerlink" href="#solidity-api" title="Permanent link">#</a></h1>
+<h2 id="dnsfacet">DNSFacet<a class="headerlink" href="#dnsfacet" title="Permanent link">#</a></h2>
+<h3 id="_isvalidsignature">_isValidSignature<a class="headerlink" href="#_isvalidsignature" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _isValidSignature(bytes message, bytes signature, address account) internal view returns (bool)</code></pre>
+<h3 id="initializedomain">initializeDomain<a class="headerlink" href="#initializedomain" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function initializeDomain(address registrar, uint256 freeRegistrationsNumber, uint256 fee, bytes32 domainName, uint256 referrerReward, uint256 referralDiscount) public</code></pre>
+<p>_Initializes new LibMultipass.Domain and configures it's parameters</p>
+<p>Requirements:
+ registrar is not zero
+ domainName is not empty
+ domainIndex is either zero(auto assign) or can be one of preoccupied LibMultipass.Domain names
+ domainName does not exist yet
+ onlyOwner
+ referrerReward+referralDiscount cannot be larger than fee
+ @param registrar address of registrar
+ @param freeRegistrationsNumber number of registrations free of fee
+ @param fee fee in base currency of network
+ @param domainName name of LibMultipass.Domain
+ @param referrerReward referral fee share in base currency of network
+ @param referralDiscount referral discount in base currency of network</p>
+<p>Emits an {InitializedDomain} event._</p>
+<h3 id="activatedomain">activateDomain<a class="headerlink" href="#activatedomain" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function activateDomain(bytes32 domainName) public</code></pre>
+<p>_Activates LibMultipass.Domain name</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainActivated} event._</p>
+<h3 id="deactivatedomain">deactivateDomain<a class="headerlink" href="#deactivatedomain" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function deactivateDomain(bytes32 domainName) public</code></pre>
+<p>_Deactivates LibMultipass.Domain name</p>
+<p>Deactivated LibMultipass.Domain cannot mutate names and will return zeros</p>
+<p>Requirements:
+ msg.sender is Owner OR registrar</p>
+<p>Emits an {DomainDeactivated} event._</p>
+<h3 id="changefee">changeFee<a class="headerlink" href="#changefee" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function changeFee(bytes32 domainName, uint256 fee) public</code></pre>
+<p>_Changes registrar address</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainFeeChanged} event._</p>
+<h3 id="changeregistrar">changeRegistrar<a class="headerlink" href="#changeregistrar" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function changeRegistrar(bytes32 domainName, address newRegistrar) public</code></pre>
+<p>_Changes registrar address</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {RegistrarChangeRequested} event._</p>
+<h3 id="deletename">deleteName<a class="headerlink" href="#deletename" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function deleteName(struct LibMultipass.NameQuery query) public</code></pre>
+<p>_deletes name</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainTTLChangeRequested} event._</p>
+<h3 id="changereferralprogram">changeReferralProgram<a class="headerlink" href="#changereferralprogram" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function changeReferralProgram(uint256 referrerReward, uint256 freeRegistrations, uint256 referralDiscount, bytes32 domainName) public</code></pre>
+<h3 id="resolverecord">resolveRecord<a class="headerlink" href="#resolverecord" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function resolveRecord(struct LibMultipass.NameQuery query) public view returns (bool, struct LibMultipass.Record)</code></pre>
+<p><em>resolves LibMultipass.Record of name query in to status and identity</em></p>
+<h3 id="register">register<a class="headerlink" href="#register" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function register(struct LibMultipass.Record newRecord, bytes32 domainName, bytes registrarSignature, uint256 signatureDeadline, struct LibMultipass.NameQuery referrer, bytes referralCode) public payable</code></pre>
+<p>_registers new name under LibMultipass.Domain</p>
+<p>Requirements:
+ all arguments must be set
+ domainName must be active
+resolveRecord for given arguments should return no LibMultipass.Record</p>
+<p>Emits an {registered} event._</p>
+<h3 id="getmodifyprice">getModifyPrice<a class="headerlink" href="#getmodifyprice" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getModifyPrice(struct LibMultipass.NameQuery query) public view returns (uint256)</code></pre>
+<h3 id="modifyusername">modifyUserName<a class="headerlink" href="#modifyusername" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function modifyUserName(bytes32 domainName, struct LibMultipass.NameQuery query, bytes32 newName, bytes registrarSignature, uint256 signatureDeadline) public payable</code></pre>
+<p>_modifies exsisting LibMultipass.Record</p>
+<p>Requirements:
+resolveRecord for given arguments should return valid LibMultipass.Record
+LibMultipass.Domain must be active
+newAddress and newName should be set and be unique in current LibMultipass.Domain_</p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>domainName</td>
+<td>bytes32</td>
+<td>LibMultipass.Domain</td>
+</tr>
+<tr>
+<td>query</td>
+<td>struct LibMultipass.NameQuery</td>
+<td></td>
+</tr>
+<tr>
+<td>newName</td>
+<td>bytes32</td>
+<td>new name  Emits an {Modified} event.</td>
+</tr>
+<tr>
+<td>registrarSignature</td>
+<td>bytes</td>
+<td></td>
+</tr>
+<tr>
+<td>signatureDeadline</td>
+<td>uint256</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getbalance">getBalance<a class="headerlink" href="#getbalance" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getBalance() external view returns (uint256)</code></pre>
+<p><em>returns balance of this contract</em></p>
+<h3 id="getdomainstate">getDomainState<a class="headerlink" href="#getdomainstate" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getDomainState(bytes32 domainName) external view returns (struct LibMultipass.Domain)</code></pre>
+<p><em>returns LibMultipass.Domain state variables</em></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>domainName</td>
+<td>bytes32</td>
+<td>name of the LibMultipass.Domain</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values">Return Values<a class="headerlink" href="#return-values" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>struct LibMultipass.Domain</td>
+<td>(name,       fee,       freeRegistrationsNumber,        referrerReward,        referralDiscount,        isActive,        registrar,        ttl,         registerSize)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getdomainstatebyidx">getDomainStateByIdx<a class="headerlink" href="#getdomainstatebyidx" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getDomainStateByIdx(uint256 index) external view returns (struct LibMultipass.Domain)</code></pre>
+<h3 id="getcontractstate">getContractState<a class="headerlink" href="#getcontractstate" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getContractState() external view returns (uint256)</code></pre>
+<p><em>returns contract state variables</em></p>
+<h4 id="return-values_1">Return Values<a class="headerlink" href="#return-values_1" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>uint256</td>
+<td>(s_numDomains)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="withrawfunds">withrawFunds<a class="headerlink" href="#withrawfunds" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function withrawFunds(address to) public</code></pre>
+<p>_Withraws funds stored in smart contract</p>
+<p>Requirements:
+ onlyOwner</p>
+<p>Emits an {fundsWithdawn} event._</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

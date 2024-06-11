@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/interfaces/contracts/interfaces/IRepository/" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Solidity API - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Solidity API";
+        var mkdocs_page_input_path = "interfaces/contracts/interfaces/IRepository.md";
+        var mkdocs_page_url = "/interfaces/contracts/interfaces/IRepository/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../*">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Solidity API</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/interfaces/contracts/interfaces/IRepository.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="solidity-api">Solidity API<a class="headerlink" href="#solidity-api" title="Permanent link">#</a></h1>
+<h2 id="irepository">IRepository<a class="headerlink" href="#irepository" title="Permanent link">#</a></h2>
+<p>The interface required for a repository.
+This is a modified source from Aragon X, where interface names have been changed by generalising "plugin" in to source code address".
+Implication of this is that this contract will not be aware of any setup code as opposed in original Aragon implementation which relied on having IPluginSetup requirements
+This means that it is thought to be consumed by a factory contract, that will act as "Installer" and use reposiories for solo purpose of code lookup.
+I think this is a good change as it makes the interface more generic and reusable for any kind of contract code, not just OSx specific.
+TBD - I think that major release versions should include migration contract and call signatures, but this would breaking interfaces reliant on "Tag" structure.</p>
+<h3 id="versionhashdoesnotexist">VersionHashDoesNotExist<a class="headerlink" href="#versionhashdoesnotexist" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">error VersionHashDoesNotExist(bytes32 versionHash)</code></pre>
+<p>Thrown if a version does not exist.</p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>versionHash</td>
+<td>bytes32</td>
+<td>The tag hash.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="releasezeronotallowed">ReleaseZeroNotAllowed<a class="headerlink" href="#releasezeronotallowed" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">error ReleaseZeroNotAllowed()</code></pre>
+<p>Thrown if a release number is zero.</p>
+<h3 id="invalidreleaseincrement">InvalidReleaseIncrement<a class="headerlink" href="#invalidreleaseincrement" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">error InvalidReleaseIncrement(uint8 latestRelease, uint8 newRelease)</code></pre>
+<p>Thrown if a release number is incremented by more than one.</p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>latestRelease</td>
+<td>uint8</td>
+<td>The latest release number.</td>
+</tr>
+<tr>
+<td>newRelease</td>
+<td>uint8</td>
+<td>The new release number.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="alreadyinpreviousrelease">AlreadyInPreviousRelease<a class="headerlink" href="#alreadyinpreviousrelease" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">error AlreadyInPreviousRelease(uint8 release, uint16 build, address source)</code></pre>
+<p>Thrown if the same contract exists already in a previous releases.</p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>uint8</td>
+<td>The release number of the already existing source.</td>
+</tr>
+<tr>
+<td>build</td>
+<td>uint16</td>
+<td>The build number of the already existing source.</td>
+</tr>
+<tr>
+<td>source</td>
+<td>address</td>
+<td>The  contract address.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="emptyreleasemetadata">EmptyReleaseMetadata<a class="headerlink" href="#emptyreleasemetadata" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">error EmptyReleaseMetadata()</code></pre>
+<p>Thrown if the metadata URI is empty.</p>
+<h3 id="releasedoesnotexist">ReleaseDoesNotExist<a class="headerlink" href="#releasedoesnotexist" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">error ReleaseDoesNotExist()</code></pre>
+<p>Thrown if release does not exist.</p>
+<h3 id="updatereleasemetadata">updateReleaseMetadata<a class="headerlink" href="#updatereleasemetadata" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function updateReleaseMetadata(uint8 release, bytes releaseMetadata) external</code></pre>
+<p>Updates the metadata for release with content <code>@fromHex(releaseMetadata)</code>.</p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>uint8</td>
+<td>The release number.</td>
+</tr>
+<tr>
+<td>releaseMetadata</td>
+<td>bytes</td>
+<td>The release metadata URI.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="createversion">createVersion<a class="headerlink" href="#createversion" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function createVersion(uint8 release, address source, bytes buildMetadata, bytes releaseMetadata) external</code></pre>
+<p>Creates a new version as the latest build for an existing release number or the first build for a new release number for the provided <code>source</code> contract address and metadata.</p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>uint8</td>
+<td>The release number.</td>
+</tr>
+<tr>
+<td>source</td>
+<td>address</td>
+<td>The address of the source code.</td>
+</tr>
+<tr>
+<td>buildMetadata</td>
+<td>bytes</td>
+<td>The build metadata URI.</td>
+</tr>
+<tr>
+<td>releaseMetadata</td>
+<td>bytes</td>
+<td>The release metadata URI.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="versioncreated">VersionCreated<a class="headerlink" href="#versioncreated" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event VersionCreated(uint8 release, uint16 build, address source, bytes buildMetadata)</code></pre>
+<p>Emitted if the same source exists in previous releases.</p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>uint8</td>
+<td>The release number.</td>
+</tr>
+<tr>
+<td>build</td>
+<td>uint16</td>
+<td>The build number.</td>
+</tr>
+<tr>
+<td>source</td>
+<td>address</td>
+<td>The address of the source code.</td>
+</tr>
+<tr>
+<td>buildMetadata</td>
+<td>bytes</td>
+<td>The build metadata URI.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="releasemetadataupdated">ReleaseMetadataUpdated<a class="headerlink" href="#releasemetadataupdated" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event ReleaseMetadataUpdated(uint8 release, bytes releaseMetadata)</code></pre>
+<p>Emitted when a release's metadata was updated.</p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>uint8</td>
+<td>The release number.</td>
+</tr>
+<tr>
+<td>releaseMetadata</td>
+<td>bytes</td>
+<td>The release metadata URI.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="buildcount">buildCount<a class="headerlink" href="#buildcount" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function buildCount(uint8 release) external view returns (uint256)</code></pre>
+<p>Gets the total number of builds for a given release number.</p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>uint8</td>
+<td>The release number.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values">Return Values<a class="headerlink" href="#return-values" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>uint256</td>
+<td>The number of builds of this release.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getversion">getVersion<a class="headerlink" href="#getversion" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getVersion(bytes32 tagHash) external view returns (struct Version)</code></pre>
+<p>Returns the version for a tag hash.</p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tagHash</td>
+<td>bytes32</td>
+<td>The tag hash.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values_1">Return Values<a class="headerlink" href="#return-values_1" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>struct Version</td>
+<td>The version associated with a tag hash.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getversion_1">getVersion<a class="headerlink" href="#getversion_1" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getVersion(struct Tag tag) external view returns (struct Version)</code></pre>
+<p>Returns the version associated with a tag.</p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tag</td>
+<td>struct Tag</td>
+<td>The version tag.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values_2">Return Values<a class="headerlink" href="#return-values_2" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>struct Version</td>
+<td>The version associated with the tag.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getlatestversion">getLatestVersion<a class="headerlink" href="#getlatestversion" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getLatestVersion(address source) external view returns (struct Version)</code></pre>
+<p>Returns the latest version for a given source.</p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>address</td>
+<td>The source address</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values_3">Return Values<a class="headerlink" href="#return-values_3" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>struct Version</td>
+<td>The latest version associated with the source.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getlatestversion_1">getLatestVersion<a class="headerlink" href="#getlatestversion_1" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getLatestVersion(uint8 release) external view returns (struct Version)</code></pre>
+<p>Returns the latest version for a given release number.</p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>uint8</td>
+<td>The release number.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values_4">Return Values<a class="headerlink" href="#return-values_4" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>struct Version</td>
+<td>The latest version of this release.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="latestrelease">latestRelease<a class="headerlink" href="#latestrelease" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function latestRelease() external view returns (uint8)</code></pre>
+<p>Returns the latest version for a given release number.</p>
+<h4 id="return-values_5">Return Values<a class="headerlink" href="#return-values_5" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>uint8</td>
+<td>The latest version of this repository.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

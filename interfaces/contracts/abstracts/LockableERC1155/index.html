@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/interfaces/contracts/abstracts/LockableERC1155/" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Solidity API - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Solidity API";
+        var mkdocs_page_input_path = "interfaces/contracts/abstracts/LockableERC1155.md";
+        var mkdocs_page_url = "/interfaces/contracts/abstracts/LockableERC1155/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../*">None</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Solidity API</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/interfaces/contracts/abstracts/LockableERC1155.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="solidity-api">Solidity API<a class="headerlink" href="#solidity-api" title="Permanent link">#</a></h1>
+<h2 id="insufficient">insufficient<a class="headerlink" href="#insufficient" title="Permanent link">#</a></h2>
+<pre class="highlight"><code class="language-solidity">error insufficient(uint256 id, uint256 balance, uint256 required)</code></pre>
+<h2 id="lockableerc1155">LockableERC1155<a class="headerlink" href="#lockableerc1155" title="Permanent link">#</a></h2>
+<p><em>This is an abstract contract that extends the ERC1155 token contract and implements the ILockableERC1155 interface.
+     It provides functionality to lock and unlock token amounts for specific accounts and IDs.</em></p>
+<h3 id="lockedamounts">lockedAmounts<a class="headerlink" href="#lockedamounts" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">mapping(address =&gt; mapping(uint256 =&gt; uint256)) lockedAmounts</code></pre>
+<h3 id="lock">lock<a class="headerlink" href="#lock" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function lock(address account, uint256 id, uint256 amount) public virtual</code></pre>
+<p><em>Locks a specified amount of tokens for a given account and token ID.
+If the account does not have enough balance to lock the specified amount,
+the function will revert with an "insufficient" error message.
+Emits a <code>TokensLocked</code> event after successfully locking the tokens.</em></p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account</td>
+<td>address</td>
+<td>The address of the account to lock tokens for.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>uint256</td>
+<td>The ID of the token to lock.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>uint256</td>
+<td>The amount of tokens to lock.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unlock">unlock<a class="headerlink" href="#unlock" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function unlock(address account, uint256 id, uint256 amount) public virtual</code></pre>
+<p><em>Unlocks a specified amount of tokens for a given account and token ID.
+If the locked amount is less than the specified amount, it reverts with an "insufficient" error message.
+Emits a <code>TokensUnlocked</code> event after unlocking the tokens.</em></p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account</td>
+<td>address</td>
+<td>The address of the account to unlock tokens for.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>uint256</td>
+<td>The ID of the token to unlock.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>uint256</td>
+<td>The amount of tokens to unlock.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unlockedbalanceof">unlockedBalanceOf<a class="headerlink" href="#unlockedbalanceof" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function unlockedBalanceOf(address account, uint256 id) public view returns (uint256)</code></pre>
+<p><em>Returns the unlocked balance of a specific ERC1155 token for an account.
+The unlocked balance is calculated by subtracting the locked amount from the total balance.</em></p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account</td>
+<td>address</td>
+<td>The address of the account.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>uint256</td>
+<td>The ID of the ERC1155 token.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="return-values">Return Values<a class="headerlink" href="#return-values" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0]</td>
+<td>uint256</td>
+<td>The unlocked balance of the ERC1155 token for the account.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_beforetokentransfer">_beforeTokenTransfer<a class="headerlink" href="#_beforetokentransfer" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _beforeTokenTransfer(address operator, address from, address to, uint256[] ids, uint256[] amounts, bytes data) internal virtual</code></pre>
+<p><em>Hook function that is called before any token transfer.
+It checks if the transfer is allowed based on the locked amounts of the tokens.
+If the transfer is not allowed, it reverts with an error message.</em></p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>address</td>
+<td>The address performing the token transfer.</td>
+</tr>
+<tr>
+<td>from</td>
+<td>address</td>
+<td>The address from which the tokens are being transferred.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>address</td>
+<td>The address to which the tokens are being transferred.</td>
+</tr>
+<tr>
+<td>ids</td>
+<td>uint256[]</td>
+<td>An array of token IDs being transferred.</td>
+</tr>
+<tr>
+<td>amounts</td>
+<td>uint256[]</td>
+<td>An array of token amounts being transferred.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>bytes</td>
+<td>Additional data attached to the transfer.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
