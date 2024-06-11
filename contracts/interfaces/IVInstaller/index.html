@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/contracts/interfaces/IVInstaller/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>IVInstaller - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "IVInstaller";
+        var mkdocs_page_input_path = "contracts/interfaces/IVInstaller.md";
+        var mkdocs_page_url = "/contracts/interfaces/IVInstaller/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Contracts</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Abstracts</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/CompositeERC1155/">CompositeERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/DiamondReentrancyGuard/">DiamondReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/IVInstallerPlugin/">IVInstallerPlugin</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/LockableERC1155/">LockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/draft-EIP712Diamond/">draft EIP712Diamond</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Facets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/DNSFacet/">DNSFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/EIP712InspectorFacet/">EIP712InspectorFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameMastersFacet/">RankifyInstanceGameMastersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameOwnersFacet/">RankifyInstanceGameOwnersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceMainFacet/">RankifyInstanceMainFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceRequirementsFacet/">RankifyInstanceRequirementsFacet</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Interfaces</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../IERC1155Receiver/">ERC1155 transfer receiver interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ILockableERC1155/">ILockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IManagedAssetFactory/">IManagedAssetFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IMultipass/">IMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRankToken/">IRankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRankifyInstanceCommons/">IRankifyInstanceCommons</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRepository/">IRepository</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">IVInstaller</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#enum-versionrequirementtypes">enum VersionRequirementTypes</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVRegistry/">IVRegistry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVRepoFactory/">IVRepoFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVTag/">IVTag</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibArray/">LibArray</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibCoinVending/">LibCoinVending</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibEIP712Storage/">LibEIP712Storage</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibMultipass/">LibMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibQuadraticVoting/">LibQuadraticVoting</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibRankify/">LibRankify</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibReentrancyGuard/">LibReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibTurnBasedGame/">LibTBG</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tokens</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/RankToken/">RankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/Rankify/">Rankify</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../interfaces/js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">interfaces</li>
+          <li class="breadcrumb-item">Contracts</li>
+          <li class="breadcrumb-item">Interfaces</li>
+      <li class="breadcrumb-item active">IVInstaller</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/contracts/interfaces/IVInstaller.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<h3 id="enum-versionrequirementtypes">enum VersionRequirementTypes<a class="headerlink" href="#enum-versionrequirementtypes" title="Permanent link">#</a></h3>
+<p><em>Enum defining the types of version requirements for repositories.
+- All: Matches any version.
+- MajorVersion: Matches any version with the same major version number.
+- ExactVersion: Matches the exact version specified.</em></p>
+<pre class="highlight"><code class="language-solidity">enum VersionRequirementTypes {
+  All,
+  MajorVersion,
+  ExactVersion
+}</code></pre>
+<h1 id="_2"><a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
+<h3 id="enum-installationtypes">enum InstallationTypes<a class="headerlink" href="#enum-installationtypes" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">enum InstallationTypes {
+  Cloneable,
+  Constructable
+}</code></pre>
+<h1 id="_3"><a class="headerlink" href="#_3" title="Permanent link">#</a></h1>
+<h3 id="public-struct-versioncontrol">public struct VersionControl<a class="headerlink" href="#public-struct-versioncontrol" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Struct defining a version requirement for a repository.</em></p>
+<pre class="highlight"><code class="language-solidity">struct VersionControl {
+  address source;
+  struct Tag baseVersion;
+  enum VersionRequirementTypes requirementType;
+}</code></pre>
+<h1 id="_4"><a class="headerlink" href="#_4" title="Permanent link">#</a></h1>
+<h3 id="public-struct-installationplan">public struct InstallationPlan<a class="headerlink" href="#public-struct-installationplan" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Struct defining the installation plan for a repository.</em></p>
+<pre class="highlight"><code class="language-solidity">struct InstallationPlan {
+  struct VersionControl requiredSource;
+  bytes4[] initializerFnSelectors;
+  enum InstallationTypes installationType;
+}</code></pre>
+<h1 id="_5"><a class="headerlink" href="#_5" title="Permanent link">#</a></h1>
+<h3 id="public-struct-envelope">public struct Envelope<a class="headerlink" href="#public-struct-envelope" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">struct Envelope {
+  address destination;
+  bytes[] data;
+}</code></pre>
+<h1 id="_6"><a class="headerlink" href="#_6" title="Permanent link">#</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">#</a></h2>
+<h3 id="error-repositoryisnotadded">error RepositoryIsNotAdded<a class="headerlink" href="#error-repositoryisnotadded" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">error RepositoryIsNotAdded(contract IRepository repository) </code></pre>
+<p><em>Error thrown when a repository is not added to the installer.</em></p>
+<h3 id="error-versiondoesnotmatchrequirement">error VersionDoesNotMatchRequirement<a class="headerlink" href="#error-versiondoesnotmatchrequirement" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">error VersionDoesNotMatchRequirement(address repository, struct Tag version, struct Tag requiredTag) </code></pre>
+<p><em>Error thrown when the version does not match the requirement for a repository.</em></p>
+<h3 id="event-repositoryrequirementupdated">event RepositoryRequirementUpdated<a class="headerlink" href="#event-repositoryrequirementupdated" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event RepositoryRequirementUpdated(contract IRepository repository, struct Tag oldTag, struct Tag newTag) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>oldTag</code></td>
+<td><code>struct Tag</code></td>
+<td>The old version requirement for the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>newTag</code></td>
+<td><code>struct Tag</code></td>
+<td>The new version requirement for the repository.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Event emitted when the version requirement for a repository is updated.</em></p>
+<h3 id="event-repositoryadded">event RepositoryAdded<a class="headerlink" href="#event-repositoryadded" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event RepositoryAdded(contract IRepository repository, address adder, struct VersionControl requirement, bytes32 metadata) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>adder</code></td>
+<td><code>address</code></td>
+<td>The address of the account that added the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>requirement</code></td>
+<td><code>struct VersionControl</code></td>
+<td>The version requirement for the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metadata</code></td>
+<td><code>bytes32</code></td>
+<td>The metadata associated with the repository.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Event emitted when a repository is added to the installer.</em></p>
+<h3 id="event-repositoryremoved">event RepositoryRemoved<a class="headerlink" href="#event-repositoryremoved" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event RepositoryRemoved(contract IRepository repository) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Event emitted when a repository is removed from the installer.</em></p>
+<h3 id="event-instantiated">event Instantiated<a class="headerlink" href="#event-instantiated" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event Instantiated(address newInstance, contract IRepository repository, address instantiator, struct Tag version, bytes metadata) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>newInstance</code></td>
+<td><code>address</code></td>
+<td>The address of the new instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>instantiator</code></td>
+<td><code>address</code></td>
+<td>The address of the account that instantiated the instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>version</code></td>
+<td><code>struct Tag</code></td>
+<td>The version of the repository used for instantiation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metadata</code></td>
+<td><code>bytes</code></td>
+<td>The metadata associated with the instance.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Event emitted when a new instance is instantiated from a repository.</em></p>
+<h3 id="event-upgradedminor">event UpgradedMinor<a class="headerlink" href="#event-upgradedminor" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event UpgradedMinor(contract IRepository repository, uint16 oldMinor, uint16 newMinor, uint8 build, bytes metadata) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>oldMinor</code></td>
+<td><code>uint16</code></td>
+<td>The old minor version.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>newMinor</code></td>
+<td><code>uint16</code></td>
+<td>The new minor version.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>build</code></td>
+<td><code>uint8</code></td>
+<td>The build number.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metadata</code></td>
+<td><code>bytes</code></td>
+<td>The metadata associated with the upgrade.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Event emitted when source repository is upgraded to a new minor version.</em></p>
+<h3 id="event-upgradedmajor">event UpgradedMajor<a class="headerlink" href="#event-upgradedmajor" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event UpgradedMajor(contract IRepository repository, uint8 oldMajor, uint8 newMajor, uint16 build, bytes metadata) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>oldMajor</code></td>
+<td><code>uint8</code></td>
+<td>The old major version.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>newMajor</code></td>
+<td><code>uint8</code></td>
+<td>The new major version.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>build</code></td>
+<td><code>uint16</code></td>
+<td>The build number.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metadata</code></td>
+<td><code>bytes</code></td>
+<td>The metadata associated with the upgrade.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Event emitted when source repository is upgraded to a new major version.</em></p>
+<h3 id="external-function-addsource">external function addSource<a class="headerlink" href="#external-function-addsource" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function addSource(struct VersionControl versionedSource, struct InstallationPlan config, bytes32 metadata) external </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>versionedSource</code></td>
+<td><code>struct VersionControl</code></td>
+<td>The version of the source repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>config</code></td>
+<td><code>struct InstallationPlan</code></td>
+<td>The configuration for the source repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>metadata</code></td>
+<td><code>bytes32</code></td>
+<td>The metadata associated with the source repository.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Adds new source repository to the installer.</em></p>
+<h3 id="external-function-removesource">external function removeSource<a class="headerlink" href="#external-function-removesource" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function removeSource(contract IRepository repository) external </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Removes a repository from the installer.</em></p>
+<h3 id="external-function-installnewexact">external function installNewExact<a class="headerlink" href="#external-function-installnewexact" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function installNewExact(struct Envelope installationData, struct Tag version) external returns (address) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>installationData</code></td>
+<td><code>struct Envelope</code></td>
+<td>The payload for the installation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>version</code></td>
+<td><code>struct Tag</code></td>
+<td>The version of the repository to install.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Installs a new instance from the latest version of a repository.</em></p>
+<h3 id="external-function-installnewlatest">external function installNewLatest<a class="headerlink" href="#external-function-installnewlatest" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function installNewLatest(struct Envelope installationData) external returns (address) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>installationData</code></td>
+<td><code>struct Envelope</code></td>
+<td>The payload for the installation.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Installs a new instance from the latest version of a repository.</em></p>
+<h3 id="external-function-upgradesource">external function upgradeSource<a class="headerlink" href="#external-function-upgradesource" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function upgradeSource(struct InstallationPlan newConfig, address migrationContract, bytes migrationData) external returns (address[] instances) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>newConfig</code></td>
+<td><code>struct InstallationPlan</code></td>
+<td>The new configuration for the source repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>migrationContract</code></td>
+<td><code>address</code></td>
+<td>The address of the migration contract.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>migrationData</code></td>
+<td><code>bytes</code></td>
+<td>The data for the migration contract.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Upgrades versioned source new requirements.</em></p>
+<h3 id="external-function-getinstances">external function getInstances<a class="headerlink" href="#external-function-getinstances" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getInstances(contract IRepository repository) external view returns (address[]) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td><code>address[]</code></td>
+<td>An array of addresses representing the instances.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Gets all instances created by installer for a specific repository source</em></p>
+<h3 id="external-function-getinstancesbyversion">external function getInstancesByVersion<a class="headerlink" href="#external-function-getinstancesbyversion" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getInstancesByVersion(struct VersionControl sources) external view returns (address[]) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>sources</code></td>
+<td><code>struct VersionControl</code></td>
+<td>The version control for the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td><code>address[]</code></td>
+<td>An array of addresses representing the instances.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Gets all instances created by installer for a specific repository source</em></p>
+<h3 id="external-function-getrepositories">external function getRepositories<a class="headerlink" href="#external-function-getrepositories" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getRepositories() external view returns (address[]) </code></pre>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>address[]</code></td>
+<td>An array of addresses representing the repositories.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Gets all repositories added to the installer.</em></p>
+<h3 id="external-function-getrepository">external function getRepository<a class="headerlink" href="#external-function-getrepository" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getRepository(contract IRepository instance) external view returns (address) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>instance</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td><code>address</code></td>
+<td>The address of the repository.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Gets the repository associated with a specific instance.</em></p>
+<h3 id="external-function-getversion">external function getVersion<a class="headerlink" href="#external-function-getversion" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getVersion(address instance) external view returns (struct Tag) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>instance</code></td>
+<td><code>address</code></td>
+<td>The address of the instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td><code>struct Tag</code></td>
+<td>The version of the instance.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Gets the version of a specific instance.</em></p>
+<h3 id="external-function-getversioncontrol">external function getVersionControl<a class="headerlink" href="#external-function-getversioncontrol" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getVersionControl(address instance) external view returns (struct VersionControl) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>instance</code></td>
+<td><code>address</code></td>
+<td>The address of the instance.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td><code>struct VersionControl</code></td>
+<td>The version requirement for the instance.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Gets the version requirement for a specific instance.</em></p>
+<h3 id="external-function-getinstallationplan">external function getInstallationPlan<a class="headerlink" href="#external-function-getinstallationplan" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getInstallationPlan(contract IRepository repository) external view returns (struct InstallationPlan) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>repository</code></td>
+<td><code>contract IRepository</code></td>
+<td>The address of the repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td><code>struct InstallationPlan</code></td>
+<td>The installation plan for the repository.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Gets the installation plan for a specific repository.</em></p>
+<!--CONTRACT_END-->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../IRepository/" class="btn btn-neutral float-left" title="IRepository"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../IVRegistry/" class="btn btn-neutral float-right" title="IVRegistry">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../IRepository/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../IVRegistry/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

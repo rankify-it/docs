@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/contracts/interfaces/IMultipass/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>IMultipass - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "IMultipass";
+        var mkdocs_page_input_path = "contracts/interfaces/IMultipass.md";
+        var mkdocs_page_url = "/contracts/interfaces/IMultipass/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Contracts</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Abstracts</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/CompositeERC1155/">CompositeERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/DiamondReentrancyGuard/">DiamondReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/IVInstallerPlugin/">IVInstallerPlugin</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/LockableERC1155/">LockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/draft-EIP712Diamond/">draft EIP712Diamond</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Facets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/DNSFacet/">DNSFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/EIP712InspectorFacet/">EIP712InspectorFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameMastersFacet/">RankifyInstanceGameMastersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameOwnersFacet/">RankifyInstanceGameOwnersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceMainFacet/">RankifyInstanceMainFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceRequirementsFacet/">RankifyInstanceRequirementsFacet</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Interfaces</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../IERC1155Receiver/">ERC1155 transfer receiver interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ILockableERC1155/">ILockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IManagedAssetFactory/">IManagedAssetFactory</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">IMultipass</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation">Implementation</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRankToken/">IRankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRankifyInstanceCommons/">IRankifyInstanceCommons</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRepository/">IRepository</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVInstaller/">IVInstaller</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVRegistry/">IVRegistry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVRepoFactory/">IVRepoFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVTag/">IVTag</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibArray/">LibArray</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibCoinVending/">LibCoinVending</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibEIP712Storage/">LibEIP712Storage</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibMultipass/">LibMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibQuadraticVoting/">LibQuadraticVoting</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibRankify/">LibRankify</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibReentrancyGuard/">LibReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibTurnBasedGame/">LibTBG</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tokens</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/RankToken/">RankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/Rankify/">Rankify</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../interfaces/js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">interfaces</li>
+          <li class="breadcrumb-item">Contracts</li>
+          <li class="breadcrumb-item">Interfaces</li>
+      <li class="breadcrumb-item active">IMultipass</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/contracts/interfaces/IMultipass.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">#</a></h2>
+<h3 id="external-function-resolverecord">external function resolveRecord<a class="headerlink" href="#external-function-resolverecord" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function resolveRecord(struct LibMultipass.NameQuery query) external view returns (bool, struct LibMultipass.Record) </code></pre>
+<h3 id="external-function-initializedomain">external function initializeDomain<a class="headerlink" href="#external-function-initializedomain" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function initializeDomain(address registrar, uint256 freeRegistrationsNumber, uint256 fee, bytes32 domainName, uint256 referrerReward, uint256 referralDiscount) external </code></pre>
+<p>*Initializes new LibMultipass.Domain and configures it's parameters</p>
+<p>Requirements:
+ registrar is not zero
+ domainName is not empty
+ domainIndex is either zero(auto assign) or can be one of preoccupied LibMultipass.Domain names
+ domainName does not exist yet
+ onlyOwner
+ referrerReward+referralDiscount cannot be larger than fee
+ @param registrar address of registrar
+ @param freeRegistrationsNumber number of registrations free of fee
+ @param fee fee in base currency of network
+ @param domainName name of LibMultipass.Domain
+ @param referrerReward referral fee share in base currency of network
+ @param referralDiscount referral discount in base currency of network</p>
+<p>Emits an {InitializedDomain} event.*</p>
+<h3 id="external-function-activatedomain">external function activateDomain<a class="headerlink" href="#external-function-activatedomain" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function activateDomain(bytes32 domainName) external </code></pre>
+<p>*Activates LibMultipass.Domain name</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainActivated} event.*</p>
+<h3 id="external-function-deactivatedomain">external function deactivateDomain<a class="headerlink" href="#external-function-deactivatedomain" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function deactivateDomain(bytes32 domainName) external </code></pre>
+<p>*Deactivates LibMultipass.Domain name</p>
+<p>Deactivated LibMultipass.Domain cannot mutate names and will return zeros</p>
+<p>Requirements:
+ msg.sender is Owner OR registrar</p>
+<p>Emits an {DomainDeactivated} event.*</p>
+<h3 id="external-function-changefee">external function changeFee<a class="headerlink" href="#external-function-changefee" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function changeFee(bytes32 domainName, uint256 fee) external </code></pre>
+<p>*Changes registrar address</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainFeeChanged} event.*</p>
+<h3 id="external-function-changeregistrar">external function changeRegistrar<a class="headerlink" href="#external-function-changeregistrar" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function changeRegistrar(bytes32 domainName, address newRegistrar) external </code></pre>
+<p>*Changes registrar address</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {RegistrarChangeRequested} event.*</p>
+<h3 id="external-function-deletename">external function deleteName<a class="headerlink" href="#external-function-deletename" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function deleteName(struct LibMultipass.NameQuery query) external </code></pre>
+<p>*deletes name</p>
+<p>Requirements:
+ msg.sender is Owner</p>
+<p>Emits an {DomainTTLChangeRequested} event.*</p>
+<h3 id="external-function-changereferralprogram">external function changeReferralProgram<a class="headerlink" href="#external-function-changereferralprogram" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function changeReferralProgram(uint256 referrerFeeShare, uint256 referralDiscount, uint256 freeRegistrations, bytes32 domainName) external </code></pre>
+<p>*executes all pending changes to LibMultipass.Domain that fulfill TTL</p>
+<p>Requirements:
+ domainName must be set
+ referrerFeeShare+referralDiscount cannot be larger than 2^32</p>
+<p>Emits an {ReferralProgramChangeRequested} event.*</p>
+<h3 id="external-function-register">external function register<a class="headerlink" href="#external-function-register" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function register(struct LibMultipass.Record newRecord, bytes32 domainName, bytes registrarSignature, uint256 signatureDeadline, struct LibMultipass.NameQuery referrer, bytes referralCode) external payable </code></pre>
+<p>*registers new name under LibMultipass.Domain</p>
+<p>Requirements:
+ all arguments must be set
+ domainName must be active
+resolveRecord for given arguments should return no LibMultipass.Record</p>
+<p>Emits an {registered} event.*</p>
+<h3 id="external-function-modifyusername">external function modifyUserName<a class="headerlink" href="#external-function-modifyusername" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function modifyUserName(bytes32 domainName, struct LibMultipass.NameQuery query, bytes32 newName, bytes registrarSignature, uint256 signatureDeadline) external payable </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>domainName</code></td>
+<td><code>bytes32</code></td>
+<td>LibMultipass.Domain</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>query</code></td>
+<td><code>struct LibMultipass.NameQuery</code></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>newName</code></td>
+<td><code>bytes32</code></td>
+<td>new name  Emits an {Modified} event.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>registrarSignature</code></td>
+<td><code>bytes</code></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>signatureDeadline</code></td>
+<td><code>uint256</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>*modifies exsisting LibMultipass.Record</p>
+<p>Requirements:
+resolveRecord for given arguments should return valid LibMultipass.Record
+LibMultipass.Domain must be active
+newAddress and newName should be set and be unique in current LibMultipass.Domain*</p>
+<h3 id="external-function-getbalance">external function getBalance<a class="headerlink" href="#external-function-getbalance" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getBalance() external view returns (uint256) </code></pre>
+<p><em>returns balance of this contract</em></p>
+<h3 id="external-function-getdomainstate">external function getDomainState<a class="headerlink" href="#external-function-getdomainstate" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getDomainState(bytes32 domainName) external view returns (struct LibMultipass.Domain) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>domainName</code></td>
+<td><code>bytes32</code></td>
+<td>name of the LibMultipass.Domain</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td><code>struct LibMultipass.Domain</code></td>
+<td>(name,       fee,       freeRegistrationsNumber,        referrerReward,        referralDiscount,        isActive,        registrar,        ttl,         registerSize)</td>
+</tr>
+</tbody>
+</table>
+<p><em>returns LibMultipass.Domain state variables</em></p>
+<h3 id="external-function-getcontractstate">external function getContractState<a class="headerlink" href="#external-function-getcontractstate" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getContractState() external view returns (uint256) </code></pre>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>uint256</code></td>
+<td>(s_numDomains)</td>
+</tr>
+</tbody>
+</table>
+<p><em>returns contract state variables</em></p>
+<h3 id="external-function-withrawfunds">external function withrawFunds<a class="headerlink" href="#external-function-withrawfunds" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function withrawFunds(address to) external </code></pre>
+<p>*Withraws funds stored in smart contract</p>
+<p>Requirements:
+ onlyOwner</p>
+<p>Emits an {fundsWithdawn} event.*</p>
+<h3 id="external-function-getmodifyprice">external function getModifyPrice<a class="headerlink" href="#external-function-getmodifyprice" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getModifyPrice(struct LibMultipass.NameQuery query) external view returns (uint256) </code></pre>
+<h3 id="event-fundswithdawn">event fundsWithdawn<a class="headerlink" href="#event-fundswithdawn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event fundsWithdawn(uint256 amount, address account) </code></pre>
+<h3 id="event-initializeddomain">event InitializedDomain<a class="headerlink" href="#event-initializeddomain" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event InitializedDomain(address registrar, uint256 freeRegistrationsNumber, uint256 fee, bytes32 domainName, uint256 referrerReward, uint256 referralDiscount) </code></pre>
+<h3 id="event-domainactivated">event DomainActivated<a class="headerlink" href="#event-domainactivated" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event DomainActivated(bytes32 domainName) </code></pre>
+<h3 id="event-domaindeactivated">event DomainDeactivated<a class="headerlink" href="#event-domaindeactivated" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event DomainDeactivated(bytes32 domainName) </code></pre>
+<h3 id="event-domainfeechanged">event DomainFeeChanged<a class="headerlink" href="#event-domainfeechanged" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event DomainFeeChanged(bytes32 domainName, uint256 newFee) </code></pre>
+<h3 id="event-freeregistrationschanged">event FreeRegistrationsChanged<a class="headerlink" href="#event-freeregistrationschanged" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event FreeRegistrationsChanged(uint256 domainIndex, uint256 newAmount) </code></pre>
+<h3 id="event-registrarchangerequested">event RegistrarChangeRequested<a class="headerlink" href="#event-registrarchangerequested" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event RegistrarChangeRequested(bytes32 domainName, address registrar) </code></pre>
+<h3 id="event-domainnamechangerequested">event DomainNameChangeRequested<a class="headerlink" href="#event-domainnamechangerequested" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event DomainNameChangeRequested(uint256 domainIndex, bytes32 NewDomainName) </code></pre>
+<h3 id="event-namedeleted">event nameDeleted<a class="headerlink" href="#event-namedeleted" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event nameDeleted(bytes32 domainName, address wallet, bytes32 id, bytes32 name) </code></pre>
+<h3 id="event-domainttlchangerequested">event DomainTTLChangeRequested<a class="headerlink" href="#event-domainttlchangerequested" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event DomainTTLChangeRequested(bytes32 domainName, uint256 amount) </code></pre>
+<h3 id="event-referralprogramchanged">event ReferralProgramChanged<a class="headerlink" href="#event-referralprogramchanged" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event ReferralProgramChanged(bytes32 domainName, uint256 reward, uint256 discount, uint256 freeNumber) </code></pre>
+<h3 id="event-domainchangesarelive">event DomainChangesAreLive<a class="headerlink" href="#event-domainchangesarelive" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event DomainChangesAreLive(bytes32 domainName, bytes32[] changes) </code></pre>
+<h3 id="event-changesqeuecanceled">event changesQeueCanceled<a class="headerlink" href="#event-changesqeuecanceled" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event changesQeueCanceled(bytes32 domainName, bytes32[] changes) </code></pre>
+<h3 id="event-registered">event Registered<a class="headerlink" href="#event-registered" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event Registered(bytes32 domainName, struct LibMultipass.Record NewRecord) </code></pre>
+<h3 id="event-referred">event Referred<a class="headerlink" href="#event-referred" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event Referred(struct LibMultipass.Record refferrer, struct LibMultipass.Record newRecord, bytes32 domainName) </code></pre>
+<h3 id="event-userrecordmodified">event UserRecordModified<a class="headerlink" href="#event-userrecordmodified" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event UserRecordModified(struct LibMultipass.Record newRecord, bytes32 oldName, bytes32 domainName) </code></pre>
+<!--CONTRACT_END-->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../IManagedAssetFactory/" class="btn btn-neutral float-left" title="IManagedAssetFactory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../IRankToken/" class="btn btn-neutral float-right" title="IRankToken">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../IManagedAssetFactory/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../IRankToken/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

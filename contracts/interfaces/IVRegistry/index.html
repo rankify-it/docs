@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/contracts/interfaces/IVRegistry/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>IVRegistry - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "IVRegistry";
+        var mkdocs_page_input_path = "contracts/interfaces/IVRegistry.md";
+        var mkdocs_page_url = "/contracts/interfaces/IVRegistry/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Contracts</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Abstracts</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/CompositeERC1155/">CompositeERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/DiamondReentrancyGuard/">DiamondReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/IVInstallerPlugin/">IVInstallerPlugin</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/LockableERC1155/">LockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/draft-EIP712Diamond/">draft EIP712Diamond</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Facets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/DNSFacet/">DNSFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/EIP712InspectorFacet/">EIP712InspectorFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameMastersFacet/">RankifyInstanceGameMastersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameOwnersFacet/">RankifyInstanceGameOwnersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceMainFacet/">RankifyInstanceMainFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceRequirementsFacet/">RankifyInstanceRequirementsFacet</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Interfaces</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../IERC1155Receiver/">ERC1155 transfer receiver interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../ILockableERC1155/">ILockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IManagedAssetFactory/">IManagedAssetFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IMultipass/">IMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRankToken/">IRankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRankifyInstanceCommons/">IRankifyInstanceCommons</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IRepository/">IRepository</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVInstaller/">IVInstaller</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">IVRegistry</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation">Implementation</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVRepoFactory/">IVRepoFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVTag/">IVTag</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibArray/">LibArray</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibCoinVending/">LibCoinVending</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibEIP712Storage/">LibEIP712Storage</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibMultipass/">LibMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibQuadraticVoting/">LibQuadraticVoting</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibRankify/">LibRankify</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibReentrancyGuard/">LibReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibTurnBasedGame/">LibTBG</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tokens</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/RankToken/">RankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/Rankify/">Rankify</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../interfaces/js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">interfaces</li>
+          <li class="breadcrumb-item">Contracts</li>
+          <li class="breadcrumb-item">Interfaces</li>
+      <li class="breadcrumb-item active">IVRegistry</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/contracts/interfaces/IVRegistry.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">#</a></h2>
+<h3 id="external-function-register">external function register<a class="headerlink" href="#external-function-register" title="Permanent link">#</a></h3>
+<p>Registers a contract with a specific version.</p>
+<pre class="highlight"><code class="language-solidity">function register(address source, struct Version version) external </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>source</code></td>
+<td><code>address</code></td>
+<td>The address of the contract to register.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>version</code></td>
+<td><code>struct Version</code></td>
+<td>The version of the contract.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-function-invalidate">external function invalidate<a class="headerlink" href="#external-function-invalidate" title="Permanent link">#</a></h3>
+<p>Sets the contract address of specific version to zero.</p>
+<pre class="highlight"><code class="language-solidity">function invalidate(address source, bool invalidateMinors, struct Version version) external </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>source</code></td>
+<td><code>address</code></td>
+<td>The address of the contract to register.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>invalidateMinors</code></td>
+<td><code>bool</code></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>version</code></td>
+<td><code>struct Version</code></td>
+<td>The version of the contract.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-function-getversion">external function getVersion<a class="headerlink" href="#external-function-getversion" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getVersion(struct Version version) external view returns (address) </code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>version</code></td>
+<td><code>struct Version</code></td>
+<td>The version of the contract.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Checks if a given address is registered in the IVRegistry.</em></p>
+<!--CONTRACT_END-->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../IVInstaller/" class="btn btn-neutral float-left" title="IVInstaller"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../IVRepoFactory/" class="btn btn-neutral float-right" title="IVRepoFactory">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../IVInstaller/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../IVRepoFactory/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

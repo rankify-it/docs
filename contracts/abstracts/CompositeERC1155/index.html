@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/contracts/abstracts/CompositeERC1155/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>CompositeERC1155 - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "CompositeERC1155";
+        var mkdocs_page_input_path = "contracts/abstracts/CompositeERC1155.md";
+        var mkdocs_page_url = "/contracts/abstracts/CompositeERC1155/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Contracts</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" >Abstracts</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">CompositeERC1155</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation">Implementation</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../DiamondReentrancyGuard/">DiamondReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../IVInstallerPlugin/">IVInstallerPlugin</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../LockableERC1155/">LockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../draft-EIP712Diamond/">draft EIP712Diamond</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Facets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/DNSFacet/">DNSFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/EIP712InspectorFacet/">EIP712InspectorFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameMastersFacet/">RankifyInstanceGameMastersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameOwnersFacet/">RankifyInstanceGameOwnersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceMainFacet/">RankifyInstanceMainFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceRequirementsFacet/">RankifyInstanceRequirementsFacet</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Interfaces</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IERC1155Receiver/">ERC1155 transfer receiver interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/ILockableERC1155/">ILockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IManagedAssetFactory/">IManagedAssetFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IMultipass/">IMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRankToken/">IRankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRankifyInstanceCommons/">IRankifyInstanceCommons</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRepository/">IRepository</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVInstaller/">IVInstaller</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVRegistry/">IVRegistry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVRepoFactory/">IVRepoFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVTag/">IVTag</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibArray/">LibArray</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibCoinVending/">LibCoinVending</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibEIP712Storage/">LibEIP712Storage</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibMultipass/">LibMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibQuadraticVoting/">LibQuadraticVoting</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibRankify/">LibRankify</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibReentrancyGuard/">LibReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibTurnBasedGame/">LibTBG</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tokens</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/RankToken/">RankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/Rankify/">Rankify</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../interfaces/js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">interfaces</li>
+          <li class="breadcrumb-item">Contracts</li>
+          <li class="breadcrumb-item">Abstracts</li>
+      <li class="breadcrumb-item active">CompositeERC1155</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/contracts/abstracts/CompositeERC1155.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="compositeerc1155">CompositeERC1155<a class="headerlink" href="#compositeerc1155" title="Permanent link">#</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<p>An abstract contract that extends LockableERC1155 and provides functionality for composite ERC1155 tokens.
+Composite tokens can be "composed" from multiple underlying assets, which however do not change their owner
+and in contrast to that use LockableERC1155 standard, which allows to read locked asset BalanceOf, OwnerOf methods correctly</p>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">#</a></h2>
+<h3 id="internal-function-constructor">internal function constructor<a class="headerlink" href="#internal-function-constructor" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">constructor(string uri_, address[] dimensionTokens, uint256[] tokenWeights) internal</code></pre>
+<h3 id="internal-function-_mint">internal function _mint<a class="headerlink" href="#internal-function-_mint" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _mint(address to, uint256 tokenId, uint256 value, bytes data) internal virtual</code></pre>
+<h3 id="internal-function-_burn">internal function _burn<a class="headerlink" href="#internal-function-_burn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _burn(address from, uint256 id, uint256 amount) internal</code></pre>
+<p>*Destroys <code>amount</code> tokens of token type <code>id</code> from <code>from</code></p>
+<p>Emits a {TransferSingle} event.</p>
+<p>Requirements:</p>
+<ul>
+<li><code>from</code> cannot be the zero address.</li>
+<li><code>from</code> must have at least <code>amount</code> tokens of token type <code>id</code>.*</li>
+</ul>
+<h3 id="public-function-decompose">public function decompose<a class="headerlink" href="#public-function-decompose" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function decompose(address from, uint256 id, uint256 amount) public virtual</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>from</code></td>
+<td><code>address</code></td>
+<td>The address from which the composite token is being decomposed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td><code>uint256</code></td>
+<td>The ID of the composite token being decomposed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>amount</code></td>
+<td><code>uint256</code></td>
+<td>The amount of the composite token to decompose.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Decomposes a composite ERC1155 token into its individual components.
+This function unlocks the specified amount of the composite token from each dimension,
+and then burns the specified amount of the composite token from the caller's balance.</em></p>
+<h3 id="public-function-burn">public function burn<a class="headerlink" href="#public-function-burn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function burn(address account, uint256 id, uint256 value) public virtual</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Input</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>account</code></td>
+<td><code>address</code></td>
+<td>The address of the token owner.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td><code>uint256</code></td>
+<td>The ID of the token to burn.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>value</code></td>
+<td><code>uint256</code></td>
+<td>The amount of tokens to burn.</td>
+</tr>
+</tbody>
+</table>
+<p>*Burns a specified amount of tokens from the given account.
+This will burn all underlying (composite) assets</p>
+<p>Requirements:</p>
+<ul>
+<li><code>account</code> must be the token owner or an approved operator.</li>
+<li><code>id</code> and <code>value</code> must be valid token ID and amount to burn.</li>
+<li>All underlying "composite" assets implement burn as well*</li>
+</ul>
+<h3 id="public-function-getcomponents">public function getComponents<a class="headerlink" href="#public-function-getcomponents" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getComponents() public virtual returns (address[], uint256[])</code></pre>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>address[]</code></td>
+<td>An array of component addresses and an array of component weights.</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>uint256[]</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Retrieves the components of the CompositeERC1155 contract.</em></p>
+<!--CONTRACT_END-->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../../architecture/specifications/" class="btn btn-neutral float-left" title="Specifications"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../DiamondReentrancyGuard/" class="btn btn-neutral float-right" title="DiamondReentrancyGuard">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../../architecture/specifications/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../DiamondReentrancyGuard/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

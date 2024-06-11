@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/contracts/libraries/LibTurnBasedGame/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>LibTBG - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "LibTBG";
+        var mkdocs_page_input_path = "contracts/libraries/LibTurnBasedGame.md";
+        var mkdocs_page_url = "/contracts/libraries/LibTurnBasedGame/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Contracts</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Abstracts</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/CompositeERC1155/">CompositeERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/DiamondReentrancyGuard/">DiamondReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/IVInstallerPlugin/">IVInstallerPlugin</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/LockableERC1155/">LockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/draft-EIP712Diamond/">draft EIP712Diamond</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Facets</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/DNSFacet/">DNSFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/EIP712InspectorFacet/">EIP712InspectorFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameMastersFacet/">RankifyInstanceGameMastersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceGameOwnersFacet/">RankifyInstanceGameOwnersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceMainFacet/">RankifyInstanceMainFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../facets/RankifyInstanceRequirementsFacet/">RankifyInstanceRequirementsFacet</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Interfaces</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IERC1155Receiver/">ERC1155 transfer receiver interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/ILockableERC1155/">ILockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IManagedAssetFactory/">IManagedAssetFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IMultipass/">IMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRankToken/">IRankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRankifyInstanceCommons/">IRankifyInstanceCommons</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRepository/">IRepository</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVInstaller/">IVInstaller</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVRegistry/">IVRegistry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVRepoFactory/">IVRepoFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVTag/">IVTag</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Libraries</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../LibArray/">LibArray</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../LibCoinVending/">LibCoinVending</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../LibEIP712Storage/">LibEIP712Storage</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../LibMultipass/">LibMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../LibQuadraticVoting/">LibQuadraticVoting</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../LibRankify/">LibRankify</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../LibReentrancyGuard/">LibReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">LibTBG</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation">Implementation</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tokens</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/RankToken/">RankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/Rankify/">Rankify</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../interfaces/js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">interfaces</li>
+          <li class="breadcrumb-item">Contracts</li>
+          <li class="breadcrumb-item">Libraries</li>
+      <li class="breadcrumb-item active">LibTBG</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/contracts/libraries/LibTurnBasedGame.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="libtbg">LibTBG<a class="headerlink" href="#libtbg" title="Permanent link">#</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<p>Library for managing turn-based games.
+It is designed to be used as a base library for games, and provides the following functionality:
+- setting game settings such as time per turn, max players, min players, etc as well as perform score and leaderboard tracking</p>
+<p>Limitations:
+- It is assumed there is only one game per player
+- It is assumed there is only on game master per game</p>
+<p><strong><em>WARNING</em></strong> Some limitations:
+- This library is still under development and its interfaces may change.
+- getting game data (which has own storage assigement and can be encapsulated from library) however there is no storage slot collision checks in place</p>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">#</a></h2>
+<h3 id="public-struct-gamesettings">public struct GameSettings<a class="headerlink" href="#public-struct-gamesettings" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">struct GameSettings {
+  uint256 timePerTurn;
+  uint256 maxPlayersSize;
+  uint256 minPlayersSize;
+  uint256 timeToJoin;
+  uint256 maxTurns;
+  uint256 numWinners;
+  uint256 voteCredits;
+  string subject;
+}</code></pre>
+<h3 id="public-struct-gameinstance">public struct GameInstance<a class="headerlink" href="#public-struct-gameinstance" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">struct GameInstance {
+  address gameMaster;
+  uint256 currentTurn;
+  uint256 turnStartedAt;
+  uint256 registrationOpenAt;
+  bool hasStarted;
+  bool hasEnded;
+  struct EnumerableSet.AddressSet players;
+  mapping(address =&gt; bool) madeMove;
+  uint256 numPlayersMadeMove;
+  mapping(address =&gt; uint256) score;
+  bytes32 implemenationStoragePointer;
+  bool isOvertime;
+  address[] leaderboard;
+}</code></pre>
+<h3 id="public-struct-tbgstoragestruct">public struct TBGStorageStruct<a class="headerlink" href="#public-struct-tbgstoragestruct" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">struct TBGStorageStruct {
+  struct LibTBG.GameSettings settings;
+  mapping(uint256 =&gt; struct LibTBG.GameInstance) games;
+  mapping(address =&gt; uint256) playerInGame;
+  uint256 totalGamesCreated;
+}</code></pre>
+<h3 id="internal-variable-tbg_storage_position">internal variable TBG_STORAGE_POSITION<a class="headerlink" href="#internal-variable-tbg_storage_position" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">bytes32 TBG_STORAGE_POSITION </code></pre>
+<h3 id="internal-variable-implementation_storage_position">internal variable IMPLEMENTATION_STORAGE_POSITION<a class="headerlink" href="#internal-variable-implementation_storage_position" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">bytes32 IMPLEMENTATION_STORAGE_POSITION </code></pre>
+<h3 id="internal-function-tbgstorage">internal function TBGStorage<a class="headerlink" href="#internal-function-tbgstorage" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function TBGStorage() internal pure returns (struct LibTBG.TBGStorageStruct es) </code></pre>
+<h3 id="internal-function-_getgame">internal function _getGame<a class="headerlink" href="#internal-function-_getgame" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _getGame(uint256 gameId) internal view returns (struct LibTBG.GameInstance) </code></pre>
+<h3 id="internal-function-init">internal function init<a class="headerlink" href="#internal-function-init" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function init(struct LibTBG.GameSettings settings) internal </code></pre>
+<p>*Initializes the game with the provided settings. <code>settings</code> is the settings for the game.</p>
+<p>Requirements:</p>
+<ul>
+<li><code>settings.timePerTurn</code> must not be zero.</li>
+<li><code>settings.maxPlayersSize</code> must not be zero.</li>
+<li><code>settings.minPlayersSize</code> must be at least 2.</li>
+<li><code>settings.maxTurns</code> must not be zero.</li>
+<li><code>settings.numWinners</code> must not be zero and must be less than <code>settings.minPlayersSize</code>.</li>
+<li><code>settings.timeToJoin</code> must not be zero.</li>
+<li><code>settings.maxPlayersSize</code> must not be less than <code>settings.minPlayersSize</code>.</li>
+<li><code>settings.subject</code> must not be an empty string.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the settings of the game to <code>settings</code>.*</li>
+</ul>
+<h3 id="internal-function-creategame">internal function createGame<a class="headerlink" href="#internal-function-creategame" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function createGame(uint256 gameId, address gm) internal </code></pre>
+<p>*Creates a new game with the provided game ID and game master. <code>gameId</code> is the ID of the game. <code>gm</code> is the address of the game master.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must not already exist.</li>
+<li><code>gm</code> must not be the zero address.</li>
+<li><code>gameId</code> must not be zero.</li>
+<li>The game master of the game with <code>gameId</code> must be the zero address.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the game master of the game with <code>gameId</code> to <code>gm</code>.</li>
+<li>Increments the total number of games created.*</li>
+</ul>
+<h3 id="internal-function-deletegame">internal function deleteGame<a class="headerlink" href="#internal-function-deletegame" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function deleteGame(uint256 gameId) internal </code></pre>
+<p>*Deletes a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must exist.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the game master, current turn, hasEnded, hasStarted,
+  implementationStoragePointer, isOvertime, leaderboard, numPlayersMadeMove,
+  players, registrationOpenAt, and turnStartedAt of the game with <code>gameId</code>
+  to their initial values.</li>
+<li>Sets the score and madeMove of each player in the game with <code>gameId</code>
+  to their initial values.*</li>
+</ul>
+<h3 id="internal-function-canbejoined">internal function canBeJoined<a class="headerlink" href="#internal-function-canbejoined" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function canBeJoined(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if a game with the provided game ID can be joined. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the game can be joined.*</li>
+</ul>
+<h3 id="internal-function-addplayer">internal function addPlayer<a class="headerlink" href="#internal-function-addplayer" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function addPlayer(uint256 gameId, address participant) internal </code></pre>
+<p>*Adds a player to a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>participant</code> is the address of the player.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must exist.</li>
+<li><code>participant</code> must not already be in a game.</li>
+<li>The number of players in the game with <code>gameId</code> must be less than the maximum number of players.</li>
+<li>The game with <code>gameId</code> must be joinable.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Adds <code>participant</code> to the players of the game with <code>gameId</code>.</li>
+<li>Sets the madeMove of <code>participant</code> in the game with <code>gameId</code> to false.</li>
+<li>Sets the game of <code>participant</code> to <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-isplayeringame">internal function isPlayerInGame<a class="headerlink" href="#internal-function-isplayeringame" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function isPlayerInGame(uint256 gameId, address player) internal view returns (bool) </code></pre>
+<p>*Checks if a player is in a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>player</code> is the address of the player.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the player is in the game.*</li>
+</ul>
+<h3 id="internal-function-removeplayer">internal function removePlayer<a class="headerlink" href="#internal-function-removeplayer" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function removePlayer(uint256 gameId, address participant) internal </code></pre>
+<p>*Removes a player from a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>participant</code> is the address of the player.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must exist.</li>
+<li><code>participant</code> must be in the game with <code>gameId</code>.</li>
+<li>The game with <code>gameId</code> must not have started or must have ended.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the game of <code>participant</code> to 0.</li>
+<li>Removes <code>participant</code> from the players of the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-isturntimedout">internal function isTurnTimedOut<a class="headerlink" href="#internal-function-isturntimedout" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function isTurnTimedOut(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if the current turn in a game with the provided game ID has timed out. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li><code>gameId</code> must not be zero.</li>
+<li>The game with <code>gameId</code> must have started.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the current turn has timed out.*</li>
+</ul>
+<h3 id="internal-function-gameexists">internal function gameExists<a class="headerlink" href="#internal-function-gameexists" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function gameExists(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if a game with the provided game ID exists. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the game exists.*</li>
+</ul>
+<h3 id="internal-function-enforcehasstarted">internal function enforceHasStarted<a class="headerlink" href="#internal-function-enforcehasstarted" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function enforceHasStarted(uint256 gameId) internal view </code></pre>
+<p>*Enforces that a game with the provided game ID has started. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li><code>gameId</code> must not be zero.</li>
+<li>The game with <code>gameId</code> must have started.*</li>
+</ul>
+<h3 id="internal-function-canendturn">internal function canEndTurn<a class="headerlink" href="#internal-function-canendturn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function canEndTurn(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Enforces that a game with the provided game ID has started. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li><code>gameId</code> must not be zero.</li>
+<li>The game with <code>gameId</code> must have started.*</li>
+</ul>
+<h3 id="internal-function-canendturnearly">internal function canEndTurnEarly<a class="headerlink" href="#internal-function-canendturnearly" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function canEndTurnEarly(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if the current turn in a game with the provided game ID can end early. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the current turn can end early.*</li>
+</ul>
+<h3 id="internal-modifier-onlyinturntime">internal modifier onlyInTurnTime<a class="headerlink" href="#internal-modifier-onlyinturntime" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">modifier onlyInTurnTime(uint256 gameId) </code></pre>
+<p>*Modifier that requires the current turn in a game with the provided game ID to be able to end. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li>The current turn in the game with <code>gameId</code> must be able to end.*</li>
+</ul>
+<h3 id="internal-modifier-onlywhenturncanend">internal modifier onlyWhenTurnCanEnd<a class="headerlink" href="#internal-modifier-onlywhenturncanend" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">modifier onlyWhenTurnCanEnd(uint256 gameId) </code></pre>
+<h3 id="internal-function-_clearcurrentmoves">internal function _clearCurrentMoves<a class="headerlink" href="#internal-function-_clearcurrentmoves" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _clearCurrentMoves(struct LibTBG.GameInstance game) internal </code></pre>
+<p>*Clears the current moves in a game. <code>game</code> is the game.</p>
+<p>Modifies:</p>
+<ul>
+<li>Sets the madeMove of each player in <code>game</code> to false.*</li>
+</ul>
+<h3 id="internal-function-_resetplayerstates">internal function _resetPlayerStates<a class="headerlink" href="#internal-function-_resetplayerstates" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function _resetPlayerStates(struct LibTBG.GameInstance game) internal </code></pre>
+<p>*Resets the states of the players in a game. <code>game</code> is the game.</p>
+<p>Modifies:</p>
+<ul>
+<li>Sets the madeMove and score of each player in <code>game</code> to their initial values.*</li>
+</ul>
+<h3 id="internal-function-setscore">internal function setScore<a class="headerlink" href="#internal-function-setscore" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function setScore(uint256 gameId, address player, uint256 value) internal </code></pre>
+<p>*Sets the score of a player in a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>player</code> is the address of the player. <code>value</code> is the score.</p>
+<p>Requirements:</p>
+<ul>
+<li><code>player</code> must be in the game with <code>gameId</code>.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the score of <code>player</code> in the game with <code>gameId</code> to <code>value</code>.*</li>
+</ul>
+<h3 id="internal-function-getscore">internal function getScore<a class="headerlink" href="#internal-function-getscore" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getScore(uint256 gameId, address player) internal view returns (uint256) </code></pre>
+<p>*Gets the score of a player in a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>player</code> is the address of the player.</p>
+<p>Returns:</p>
+<ul>
+<li>The score of <code>player</code> in the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-getscores">internal function getScores<a class="headerlink" href="#internal-function-getscores" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getScores(uint256 gameId) internal view returns (address[], uint256[]) </code></pre>
+<p>*Gets the scores of the players in a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>An array of the addresses of the players in the game with <code>gameId</code>.</li>
+<li>An array of the scores of the players in the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-openregistration">internal function openRegistration<a class="headerlink" href="#internal-function-openregistration" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function openRegistration(uint256 gameId) internal </code></pre>
+<p>*Opens registration for a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must exist.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the registrationOpenAt of the game with <code>gameId</code> to the current block timestamp.*</li>
+</ul>
+<h3 id="internal-function-isregistrationopen">internal function isRegistrationOpen<a class="headerlink" href="#internal-function-isregistrationopen" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function isRegistrationOpen(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if registration is open for a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether registration is open for the game.*</li>
+</ul>
+<h3 id="internal-function-canstart">internal function canStart<a class="headerlink" href="#internal-function-canstart" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function canStart(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if a game with the provided game ID can start. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the game can start.*</li>
+</ul>
+<h3 id="internal-function-canstartearly">internal function canStartEarly<a class="headerlink" href="#internal-function-canstartearly" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function canStartEarly(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if a game with the provided game ID can start early. <code>gameId</code> is the ID of the game.
+By "early" it is assumed that time to join has not yet passed, but it's already cap players limit reached.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the game can start early.*</li>
+</ul>
+<h3 id="internal-function-startgameearly">internal function startGameEarly<a class="headerlink" href="#internal-function-startgameearly" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function startGameEarly(uint256 gameId) internal </code></pre>
+<p>*Starts a game with the provided game ID early. <code>gameId</code> is the ID of the game.
+By "early" it is assumed that time to join has not yet passed, but it's already cap players limit reached.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must exist.</li>
+<li>The game with <code>gameId</code> must not have started.</li>
+<li>The game with <code>gameId</code> must have opened registration.</li>
+<li>The number of players in the game with <code>gameId</code> must be greater than or equal to the minimum number of players.</li>
+<li>The number of players in the game with <code>gameId</code> must be equal to the maximum number of players or the current block timestamp must be greater than the registration open time plus the time to join.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the hasStarted, hasEnded, currentTurn, and turnStartedAt of the game with <code>gameId</code> to their new values.</li>
+<li>Resets the states of the players in the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-startgame">internal function startGame<a class="headerlink" href="#internal-function-startgame" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function startGame(uint256 gameId) internal </code></pre>
+<p>*Starts a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must exist.</li>
+<li>The game with <code>gameId</code> must not have started.</li>
+<li>The game with <code>gameId</code> must have opened registration.</li>
+<li>The current block timestamp must be greater than the registration open time plus the time to join.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the hasStarted, hasEnded, currentTurn, and turnStartedAt of the game with <code>gameId</code> to their new values.</li>
+<li>Resets the states of the players in the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-getturn">internal function getTurn<a class="headerlink" href="#internal-function-getturn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getTurn(uint256 gameId) internal view returns (uint256) </code></pre>
+<p>*Gets the current turn of a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>The current turn of the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-getgm">internal function getGM<a class="headerlink" href="#internal-function-getgm" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getGM(uint256 gameId) internal view returns (address) </code></pre>
+<p>*Gets the game master of a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>The game master of the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-islastturn">internal function isLastTurn<a class="headerlink" href="#internal-function-islastturn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function isLastTurn(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if the current turn is the last turn in a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the current turn is the last turn in the game.*</li>
+</ul>
+<h3 id="internal-function-isgameover">internal function isGameOver<a class="headerlink" href="#internal-function-isgameover" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function isGameOver(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if a game with the provided game ID is over. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the game is over.*</li>
+</ul>
+<h3 id="internal-function-enforceisnotover">internal function enforceIsNotOver<a class="headerlink" href="#internal-function-enforceisnotover" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function enforceIsNotOver(uint256 gameId) internal view </code></pre>
+<p>*Enforces that a game with the provided game ID is not over. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must not be over.*</li>
+</ul>
+<h3 id="internal-function-playermove">internal function playerMove<a class="headerlink" href="#internal-function-playermove" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function playerMove(uint256 gameId, address player) internal </code></pre>
+<p>*Records a player's move in a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>player</code> is the address of the player.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must have started.</li>
+<li>The game with <code>gameId</code> must not be over.</li>
+<li><code>player</code> must not have made a move in the current turn of the game with <code>gameId</code>.</li>
+<li><code>player</code> must be in the game with <code>gameId</code>.</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Sets the madeMove of <code>player</code> in the game with <code>gameId</code> to true.</li>
+<li>Increments the numPlayersMadeMove of the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-isplayerturncomplete">internal function isPlayerTurnComplete<a class="headerlink" href="#internal-function-isplayerturncomplete" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function isPlayerTurnComplete(uint256 gameId, address player) internal view returns (bool) </code></pre>
+<h3 id="internal-function-enforceisplayinggame">internal function enforceIsPlayingGame<a class="headerlink" href="#internal-function-enforceisplayinggame" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function enforceIsPlayingGame(uint256 gameId, address player) internal view </code></pre>
+<p>*Enforces that a player is in a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>player</code> is the address of the player.</p>
+<p>Requirements:</p>
+<ul>
+<li><code>player</code> must be in the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-hasstarted">internal function hasStarted<a class="headerlink" href="#internal-function-hasstarted" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function hasStarted(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if a game with the provided game ID has started. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the game has started.*</li>
+</ul>
+<h3 id="internal-function-getleaderboard">internal function getLeaderBoard<a class="headerlink" href="#internal-function-getleaderboard" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getLeaderBoard(uint256 gameId) internal view returns (address[]) </code></pre>
+<p>*Gets the leaderboard of a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>An array of the addresses of the players in the game with <code>gameId</code>, sorted by score.*</li>
+</ul>
+<h3 id="internal-function-nextturn">internal function nextTurn<a class="headerlink" href="#internal-function-nextturn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function nextTurn(uint256 gameId) internal returns (bool, bool, bool) </code></pre>
+<p>*Advances to the next turn in a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>gameId</code> must be able to end the current turn early. (all players have moved or the turn has timed out)</li>
+</ul>
+<p>Modifies:</p>
+<ul>
+<li>Clears the current moves in the game with <code>gameId</code>.</li>
+<li>Increments the currentTurn of the game with <code>gameId</code>.</li>
+<li>Sets the turnStartedAt of the game with <code>gameId</code> to the current block timestamp.</li>
+<li>If the current turn is the last turn or the game with <code>gameId</code> is in overtime, checks if the game is a tie and sets the isOvertime of the game with <code>gameId</code> to the result.</li>
+<li>Sets the hasEnded of the game with <code>gameId</code> to whether the game is over.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the current turn is the last turn.</li>
+<li>A boolean indicating whether the game is a tie.</li>
+<li>A boolean indicating whether the game is over.*</li>
+</ul>
+<h3 id="internal-function-getdatastorage">internal function getDataStorage<a class="headerlink" href="#internal-function-getdatastorage" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getDataStorage() internal pure returns (bytes32 pointer) </code></pre>
+<p>*Gets the data storage pointer.</p>
+<p>Returns:</p>
+<ul>
+<li>The data storage pointer.*</li>
+</ul>
+<h3 id="internal-function-getgamedatastorage">internal function getGameDataStorage<a class="headerlink" href="#internal-function-getgamedatastorage" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getGameDataStorage(uint256 gameId) internal view returns (bytes32 pointer) </code></pre>
+<p>*Gets the game data storage pointer of a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>The game data storage pointer of the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-getplayersnumber">internal function getPlayersNumber<a class="headerlink" href="#internal-function-getplayersnumber" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getPlayersNumber(uint256 gameId) internal view returns (uint256) </code></pre>
+<p>*Gets the number of players in a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>The number of players in the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-getplayers">internal function getPlayers<a class="headerlink" href="#internal-function-getplayers" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getPlayers(uint256 gameId) internal view returns (address[]) </code></pre>
+<p>*Gets the players in a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>An array of the addresses of the players in the game with <code>gameId</code>.*</li>
+</ul>
+<h3 id="internal-function-getgamesettings">internal function getGameSettings<a class="headerlink" href="#internal-function-getgamesettings" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getGameSettings() internal view returns (struct LibTBG.GameSettings) </code></pre>
+<p>*Gets the game settings.</p>
+<p>Returns:</p>
+<ul>
+<li>The game settings.*</li>
+</ul>
+<h3 id="internal-function-enforceispreregistrationstage">internal function enforceIsPreRegistrationStage<a class="headerlink" href="#internal-function-enforceispreregistrationstage" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function enforceIsPreRegistrationStage(uint256 gameId) internal view </code></pre>
+<p>*Enforces that a game with the provided game ID is in the pre-registration stage. <code>gameId</code> is the ID of the game.</p>
+<p>Requirements:</p>
+<ul>
+<li>Registration must not be open for the game with <code>gameId</code>.</li>
+<li>The game with <code>gameId</code> must not have started.*</li>
+</ul>
+<h3 id="internal-function-addovertime">internal function addOvertime<a class="headerlink" href="#internal-function-addovertime" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function addOvertime(uint256 gameId) internal </code></pre>
+<p>*Adds overtime to a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Modifies:</p>
+<ul>
+<li>Sets the isOvertime of the game with <code>gameId</code> to true.*</li>
+</ul>
+<h3 id="internal-function-isovertime">internal function isOvertime<a class="headerlink" href="#internal-function-isovertime" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function isOvertime(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if a game with the provided game ID is in overtime. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the game is in overtime.*</li>
+</ul>
+<h3 id="internal-function-resetovertime">internal function resetOvertime<a class="headerlink" href="#internal-function-resetovertime" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function resetOvertime(uint256 gameId) internal </code></pre>
+<p>*Resets the overtime of a game with the provided game ID. <code>gameId</code> is the ID of the game.</p>
+<p>Modifies:</p>
+<ul>
+<li>Sets the isOvertime of the game with <code>gameId</code> to false.*</li>
+</ul>
+<h3 id="internal-function-istie">internal function isTie<a class="headerlink" href="#internal-function-istie" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function isTie(uint256 gameId) internal view returns (bool) </code></pre>
+<p>*Checks if a game with the provided game ID is a tie. <code>gameId</code> is the ID of the game.
+Tie being defined as at least two of the top <code>numWinners</code> players having the same score.</p>
+<p>Returns:</p>
+<ul>
+<li>A boolean indicating whether the game is a tie.*</li>
+</ul>
+<h3 id="internal-function-getplayersgame">internal function getPlayersGame<a class="headerlink" href="#internal-function-getplayersgame" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function getPlayersGame(address player) internal view returns (uint256) </code></pre>
+<p>*Gets the game ID of the game a player is in. <code>player</code> is the address of the player.</p>
+<p>Returns:</p>
+<ul>
+<li>The game ID of the game <code>player</code> is in.*</li>
+</ul>
+<h3 id="internal-function-sortbyscore">internal function sortByScore<a class="headerlink" href="#internal-function-sortbyscore" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function sortByScore(uint256 gameId) internal view returns (address[], uint256[]) </code></pre>
+<p>*Sorts the players in a game with the provided game ID by score in descending order. <code>gameId</code> is the ID of the game.</p>
+<p>Returns:</p>
+<ul>
+<li>An array of the addresses of the players in the game with <code>gameId</code>, sorted by score.</li>
+<li>An array of the scores of the players in the game with <code>gameId</code>, sorted in descending order.*</li>
+</ul>
+<!--CONTRACT_END-->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../LibReentrancyGuard/" class="btn btn-neutral float-left" title="LibReentrancyGuard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../tokens/RankToken/" class="btn btn-neutral float-right" title="RankToken">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../LibReentrancyGuard/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../tokens/RankToken/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

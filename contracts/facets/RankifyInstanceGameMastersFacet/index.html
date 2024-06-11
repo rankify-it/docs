@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/contracts/facets/RankifyInstanceGameMastersFacet/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>RankifyInstanceGameMastersFacet - Rankify Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "RankifyInstanceGameMastersFacet";
+        var mkdocs_page_input_path = "contracts/facets/RankifyInstanceGameMastersFacet.md";
+        var mkdocs_page_url = "/contracts/facets/RankifyInstanceGameMastersFacet/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/solidity.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/typescript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Rankify Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Welcome</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../governance/">Governance</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../tokens/">Token types</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/applications/">Applications</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../architecture/specifications/">Specifications</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Contracts</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Abstracts</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/CompositeERC1155/">CompositeERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/DiamondReentrancyGuard/">DiamondReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/IVInstallerPlugin/">IVInstallerPlugin</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/LockableERC1155/">LockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../abstracts/draft-EIP712Diamond/">draft EIP712Diamond</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Facets</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../DNSFacet/">DNSFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../EIP712InspectorFacet/">EIP712InspectorFacet</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">RankifyInstanceGameMastersFacet</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation">Implementation</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../RankifyInstanceGameOwnersFacet/">RankifyInstanceGameOwnersFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../RankifyInstanceMainFacet/">RankifyInstanceMainFacet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../RankifyInstanceRequirementsFacet/">RankifyInstanceRequirementsFacet</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Interfaces</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IERC1155Receiver/">ERC1155 transfer receiver interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/ILockableERC1155/">ILockableERC1155</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IManagedAssetFactory/">IManagedAssetFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IMultipass/">IMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRankToken/">IRankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRankifyInstanceCommons/">IRankifyInstanceCommons</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IRepository/">IRepository</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVInstaller/">IVInstaller</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVRegistry/">IVRegistry</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVRepoFactory/">IVRepoFactory</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../interfaces/IVTag/">IVTag</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Libraries</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibArray/">LibArray</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibCoinVending/">LibCoinVending</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibEIP712Storage/">LibEIP712Storage</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibMultipass/">LibMultipass</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibQuadraticVoting/">LibQuadraticVoting</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibRankify/">LibRankify</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibReentrancyGuard/">LibReentrancyGuard</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../libraries/LibTurnBasedGame/">LibTBG</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tokens</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/RankToken/">RankToken</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../tokens/Rankify/">Rankify</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../interfaces/js/">JavaScript SDK</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../support/faq/">Frequently asked questions</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Rankify Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">interfaces</li>
+          <li class="breadcrumb-item">Contracts</li>
+          <li class="breadcrumb-item">Facets</li>
+      <li class="breadcrumb-item active">RankifyInstanceGameMastersFacet</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/rankify-it/edit/master/docs/contracts/facets/RankifyInstanceGameMastersFacet.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">#</a></h2>
+<h3 id="event-overtime">event OverTime<a class="headerlink" href="#event-overtime" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event OverTime(uint256 gameId) </code></pre>
+<h3 id="event-lastturn">event LastTurn<a class="headerlink" href="#event-lastturn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event LastTurn(uint256 gameId) </code></pre>
+<h3 id="event-proposalscore">event ProposalScore<a class="headerlink" href="#event-proposalscore" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event ProposalScore(uint256 gameId, uint256 turn, string proposalHash, string proposal, uint256 score) </code></pre>
+<h3 id="event-turnended">event TurnEnded<a class="headerlink" href="#event-turnended" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event TurnEnded(uint256 gameId, uint256 turn, address[] players, uint256[] scores, string[] newProposals, uint256[] proposerIndicies, uint256[][] votes) </code></pre>
+<h3 id="event-gameover">event GameOver<a class="headerlink" href="#event-gameover" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event GameOver(uint256 gameId, address[] players, uint256[] scores) </code></pre>
+<h3 id="event-proposalsubmitted">event ProposalSubmitted<a class="headerlink" href="#event-proposalsubmitted" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event ProposalSubmitted(uint256 gameId, uint256 turn, address proposer, bytes32 commitmentHash, string proposalEncryptedByGM) </code></pre>
+<h3 id="public-struct-proposalparams">public struct ProposalParams<a class="headerlink" href="#public-struct-proposalparams" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">struct ProposalParams {
+  uint256 gameId;
+  string encryptedProposal;
+  bytes32 commitmentHash;
+  address proposer;
+}</code></pre>
+<h3 id="event-votesubmitted">event VoteSubmitted<a class="headerlink" href="#event-votesubmitted" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">event VoteSubmitted(uint256 gameId, uint256 turn, address player, string votesHidden) </code></pre>
+<h3 id="public-function-submitvote">public function submitVote<a class="headerlink" href="#public-function-submitvote" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function submitVote(uint256 gameId, string encryptedVotes, address voter) public </code></pre>
+<p>*Submits a vote for a game. <code>gameId</code> is the ID of the game. <code>encryptedVotes</code> is the encrypted votes. <code>voter</code> is the address of the voter.</p>
+<p>Emits a <em>VoteSubmitted</em> event.</p>
+<p>Requirements:</p>
+<ul>
+<li>The caller must be a game master of the game with <code>gameId</code>.</li>
+<li>The game with <code>gameId</code> must exist.</li>
+<li>The game with <code>gameId</code> must have started.</li>
+<li>The game with <code>gameId</code> must not be over.</li>
+<li><code>voter</code> must be in the game with <code>gameId</code>.</li>
+<li>The current turn of the game with <code>gameId</code> must be greater than 1.*</li>
+</ul>
+<h3 id="public-function-submitproposal">public function submitProposal<a class="headerlink" href="#public-function-submitproposal" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function submitProposal(struct RankifyInstanceGameMastersFacet.ProposalParams proposalData) public </code></pre>
+<p>*Submits a proposal for a game. <code>proposalData</code> is the proposal data.</p>
+<p>Requirements:</p>
+<ul>
+<li>The game with <code>proposalData.gameId</code> must exist.</li>
+<li>The caller must be a game master of the game with <code>proposalData.gameId</code>.*</li>
+</ul>
+<h3 id="public-function-endturn">public function endTurn<a class="headerlink" href="#public-function-endturn" title="Permanent link">#</a></h3>
+<pre class="highlight"><code class="language-solidity">function endTurn(uint256 gameId, uint256[][] votes, string[] newProposals, uint256[] proposerIndicies) public </code></pre>
+<p>*Ends the current turn of a game with the provided game ID. <code>gameId</code> is the ID of the game. <code>votes</code> is the array of votes.
+ <code>newProposals</code> is the array of new proposals for the upcoming voting round.
+ <code>proposerIndicies</code> is the array of indices of the proposers in the previous voting round.</p>
+<p>emits a <em>ProposalScore</em> event for each player if the turn is not the first.
+emits a <em>TurnEnded</em> event.</p>
+<p>Modifies:</p>
+<ul>
+<li>Calls the <code>_nextTurn</code> function with <code>gameId</code> and <code>newProposals</code>.</li>
+<li>Resets the number of commitments of the game with <code>gameId</code> to 0.</li>
+<li>Resets the proposal commitment hash and ongoing proposal of each player in the game with <code>gameId</code>.</li>
+</ul>
+<p>Requirements:</p>
+<ul>
+<li>The caller must be a game master of the game with <code>gameId</code>.</li>
+<li>The game with <code>gameId</code> must have started.</li>
+<li>The game with <code>gameId</code> must not be over.</li>
+<li>newProposals array MUST be sorted randomly to ensure privacy
+votes and proposerIndicies MUST correspond to players array from game.getPlayers()*</li>
+</ul>
+<!--CONTRACT_END-->
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../EIP712InspectorFacet/" class="btn btn-neutral float-left" title="EIP712InspectorFacet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../RankifyInstanceGameOwnersFacet/" class="btn btn-neutral float-right" title="RankifyInstanceGameOwnersFacet">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/rankify-it" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../EIP712InspectorFacet/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../RankifyInstanceGameOwnersFacet/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
