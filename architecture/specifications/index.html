@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/architecure/specifications/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/architecture/specifications/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
     <title>Specifications - Rankify Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
@@ -13,8 +13,8 @@
       <script>
         // Current page data
         var mkdocs_page_name = "Specifications";
-        var mkdocs_page_input_path = "architecure/specifications.md";
-        var mkdocs_page_url = "/architecure/specifications/";
+        var mkdocs_page_input_path = "architecture/specifications.md";
+        var mkdocs_page_url = "/architecture/specifications/";
       </script>
     
     <!--[if lt IE 9]>
@@ -45,16 +45,18 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Welcome</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/">Rankify Basics</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Getting started</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/governance/">Governance</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../governance/">Governance</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Welcome/tokens/">Token types</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tokens/">Token types</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Architecure</span></p>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../">Smart contract infrastructure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../applications/">Applications</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Specifications</a>
     <ul class="current">
@@ -72,11 +74,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#governance-token-tbd">Governance Token [TBD]</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#app-instances">App Instances</a>
+    <li class="toctree-l3"><a class="reference internal" href="#applications">Applications</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#installer">Installer</a>
+    <li class="toctree-l4"><a class="reference internal" href="#optional-requirements">Optional requirements</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installer">Installer</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#instance-tbd">Instance [TBD]</a>
     </li>
@@ -88,7 +92,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#rankify-multisig">Rankify Multisig</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#app-instances_1">App Instances</a>
+    <li class="toctree-l3"><a class="reference internal" href="#app-instances">App Instances</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#installer-tbd">Installer [TBD]</a>
     </li>
@@ -99,16 +103,18 @@
     </ul>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Interfaces</span></p>
+              <p class="caption"><span class="caption-text">interfaces</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../interfaces/solidity-api/">Solidity API</a>
                   </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Specifications</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../specifications/IAppFactory/">App factory</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../interfaces/js/">JavaScript SDK</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../specifications/ManagedAssetFactory/">Managed Asset Factory</a>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/">Community channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/faq/">Frequently asked questions</a>
                   </li>
               </ul>
       </div>
@@ -125,10 +131,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Architecure</li>
+          <li class="breadcrumb-item">Architecture</li>
       <li class="breadcrumb-item active">Specifications</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/rankify-it/edit/master/docs/architecure/specifications.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/rankify-it/edit/master/docs/architecture/specifications.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -199,8 +205,23 @@
 <li>May implement additional <a href="https://github.com/rankify-it/contracts/blob/main/src/interfaces/IRankToken.sol">IRankToken</a> interface</li>
 </ul>
 <h3 id="governance-token-tbd">Governance Token [TBD]<a class="headerlink" href="#governance-token-tbd" title="Permanent link">#</a></h3>
-<h3 id="app-instances">App Instances<a class="headerlink" href="#app-instances" title="Permanent link">#</a></h3>
-<h4 id="installer">Installer<a class="headerlink" href="#installer" title="Permanent link">#</a></h4>
+<h3 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">#</a></h3>
+<p>There is no strict interface requirements on the applications, they can generally stay unaware of any of the infrastructure components. However, it must implement the following functional requirements:</p>
+<ul>
+<li>It shall be able to to mint and/or burn at least one <a href="../#rank-nft">Rank NFT</a> asset.</li>
+<li>Asset minting shall involve participation costs</li>
+<li>Participation costs shall be immutable parameter paid in ERC20 token</li>
+<li>Participation payment token must differ from governance token of target organization</li>
+<li>Participation cost relation to minted asset must be possible to express in formally verifiable way</li>
+</ul>
+<h4 id="optional-requirements">Optional requirements<a class="headerlink" href="#optional-requirements" title="Permanent link">#</a></h4>
+<p>These formally are not required, but will speed up process of incorporating application in the protocol supporting user interfaces.</p>
+<ul>
+<li>It shall implement application initialization schema</li>
+<li>It shall implement instance initialization schema</li>
+<li>It may implement <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRankifyInstanceCommons.sol">IRankifyInstanceCommons</a></li>
+</ul>
+<h3 id="installer">Installer<a class="headerlink" href="#installer" title="Permanent link">#</a></h3>
 <p>installer must implement <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepoInstaller.sol">IRepoInstaller</a> interface, functionality must fulfill following unit tests:</p>
 <ul>
 <li>it emits <code>RepositoryAdded</code> if <code>addRepository</code> is called successfully.</li>
@@ -262,13 +283,13 @@ The modifier must reside on contract that manages state -->
 <li>Rankify DAO signer MAY change the threshold</li>
 <li>Rankify DAO signer MAY revoke it's own signer status</li>
 </ul>
-<h3 id="app-instances_1">App Instances<a class="headerlink" href="#app-instances_1" title="Permanent link">#</a></h3>
+<h3 id="app-instances">App Instances<a class="headerlink" href="#app-instances" title="Permanent link">#</a></h3>
 <h4 id="installer-tbd">Installer [TBD]<a class="headerlink" href="#installer-tbd" title="Permanent link">#</a></h4>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../" class="btn btn-neutral float-left" title="Smart contract infrastructure"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../applications/" class="btn btn-neutral float-left" title="Applications"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../../interfaces/solidity-api/" class="btn btn-neutral float-right" title="Solidity API">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -296,7 +317,7 @@ The modifier must reside on contract that manages state -->
         </span>
     
     
-      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../applications/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../../interfaces/solidity-api/" style="color: #fcfcfc">Next &raquo;</a></span>

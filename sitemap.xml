@@ -1,43 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://rankify.it/Welcome/</loc>
-         <lastmod>2024-06-07</lastmod>
+         <loc>https://rankify.it/</loc>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rankify.it/Welcome/governance/</loc>
-         <lastmod>2024-06-07</lastmod>
+         <loc>https://rankify.it/governance/</loc>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rankify.it/Welcome/tokens/</loc>
-         <lastmod>2024-06-07</lastmod>
+         <loc>https://rankify.it/tokens/</loc>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rankify.it/architecure/</loc>
-         <lastmod>2024-06-07</lastmod>
+         <loc>https://rankify.it/architecture/</loc>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rankify.it/architecure/specifications/</loc>
-         <lastmod>2024-06-07</lastmod>
+         <loc>https://rankify.it/architecture/applications/</loc>
+         <lastmod>2024-06-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rankify.it/architecture/specifications/</loc>
+         <lastmod>2024-06-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rankify.it/interfaces/js/</loc>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/interfaces/solidity-api/</loc>
-         <lastmod>2024-06-07</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rankify.it/specifications/IAppFactory/</loc>
-         <lastmod>2024-06-07</lastmod>
+         <loc>https://rankify.it/support/</loc>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rankify.it/specifications/ManagedAssetFactory/</loc>
-         <lastmod>2024-06-07</lastmod>
+         <loc>https://rankify.it/support/faq/</loc>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
