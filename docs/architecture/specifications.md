@@ -60,9 +60,25 @@ Functional interface requirements are described in [IRepository](https://github.
 
 ### Governance Token [TBD]
 
-### App Instances
+### Applications
 
-#### Installer
+There is no strict interface requirements on the applications, they can generally stay unaware of any of the infrastructure components. However, it must implement the following functional requirements:
+
+-   It shall be able to to mint and/or burn at least one [Rank NFT](index.md#rank-nft) asset.
+-   Asset minting shall involve participation costs
+-   Participation costs shall be immutable parameter paid in ERC20 token
+-   Participation payment token must differ from governance token of target organization
+-   Participation cost relation to minted asset must be possible to express in formally verifiable way
+
+#### Optional requirements
+
+These formally are not required, but will speed up process of incorporating application in the protocol supporting user interfaces.
+
+-   It shall implement application initialization schema
+-   It shall implement instance initialization schema
+-   It may implement [IRankifyInstanceCommons](https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRankifyInstanceCommons.sol)
+
+### Installer
 
 installer must implement [IRepoInstaller](https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepoInstaller.sol) interface, functionality must fulfill following unit tests:
 

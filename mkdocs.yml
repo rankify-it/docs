@@ -2,6 +2,21 @@ site_name: Rankify Documentation
 site_url: https://rankify.it
 repo_url: https://github.com/rankify-it
 site_description: Rankify documentation portal
+nav:
+    - Welcome:
+          - "index.md"
+          - "governance.md"
+          - "tokens.md"
+    - Architecture:
+          - "architecture/index.md"
+          - "architecture/applications.md"
+          - "architecture/specifications.md"
+    - interfaces:
+          - "interfaces/solidity-api.md"
+          - "interfaces/js.md"
+    - Support:
+          - "support/index.md"
+          - "support/faq.md"
 theme:
     name: readthedocs
     #   name: mkdocs
@@ -13,12 +28,28 @@ theme:
         - rust
         - bash
 plugins:
+    - mermaid2:
+          version: "9.4.3" # only works with version < 10
+          #   arguments:
+          #       theme: "dark"
+          #       themeVariables:
+          #           primaryColor: "#BB2528"
+          #           primaryTextColor: "#fff"
+          #           primaryBorderColor: "#7C0000"
+          #           lineColor: "#F8B229"
+          #           secondaryColor: "#20000F"
+          #           tertiaryColor: "#fff"
     - search
     - plantuml:
           theme: cyborg
           puml_url: https://www.plantuml.com/plantuml/
           num_workers: 8
 markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
     - attr_list
     - toc:
           permalink: "#"
+# nav:
+#     - Home: "Welcome/index.md"
