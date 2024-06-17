@@ -36,21 +36,103 @@ Above diagram describes infrastructure _Generated_ cells adhere, while diagram i
 - **Mutated**: Cells that are intentionally modifying rankify protocol for sake of research and further development
   Initial cell input, also referred as "_head_" -->
 
-## Distribution system
+## Ethereum Distribution System
 
 The core concept of scaling Rankify is to give ability for organizations to easily spawn whole pieces of new infrastructure, such as new cells, or new applications that form organizations unique offerings to others in the network.
 
 Thus we develop a distribution system with goal to provide as generic and permission less approach as possible with yet a security guarantees between different organizations, that are translated trough curating own application infrastructure. Application infrastructure consist of:
 
--   **Repository**: Provides single address contracts to have versioned source control.
--   **Installer**: Target specific interface that consumes distributions.
-
-App developer either deploys plain source or sets up a repository for his work and deploys his source to that to provide version control interface. Then he can propose any organization to add his repository to their Installer Plugin to have his application available for installation.
-If it succeeds, organization members now can create their own instances of applications that all will share same source code and version.
+-   **Modular design**: Enables various methods of Ethereum distribution.
+-   **Loosely coupled**: Interfaces are designed to be unaware of their consumers, promoting flexibility.
+-   **Version controlled**: Facilitates easy upgrades and maintenance.
+-   **Easy to use**: A simple API and clear documentation make the system user-friendly.
 
 <!-- -   **Distributor**: Combines sources with installation instruction into distribution. -->
 
 <!-- ![app store infra](../assets/Appfra.png){: style="height:auto;width:500px"} -->
+
+```puml
+@startuml
+' -- options --
+
+
+
+' -- classes --
+interface IRepository {
+    ' -- inheritance --
+
+    ' -- usingFor --
+
+    ' -- vars --
+
+    ' -- methods --
+	+updateReleaseMetadata()
+	+createVersion()
+	+🔍buildCount()
+	+🔍getVersion()
+	+🔍getVersion()
+	+🔍getLatestVersion()
+	+🔍getLatestVersion()
+	+🔍latestRelease()
+
+}
+interface IVSourceController {
+    ' -- inheritance --
+
+    ' -- usingFor --
+
+    ' -- vars --
+
+    ' -- methods --
+	+🔍getDistributors()
+	+🔍isDistributor()
+	+setVersionRequirement()
+	+🔍getVersionRequired()
+	+addDistributor()
+	+removeDistributor()
+	+addBatchDistributors()
+	+removeBatchDistributors()
+	+setBatchVersionRequirements()
+
+}
+
+interface IDistributon {
+    ' -- inheritance --
+
+    ' -- usingFor --
+
+    ' -- vars --
+
+    ' -- methods --
+	+🔍getDistributionId()
+	+🔍getDistribution()
+
+}
+
+
+interface IInstantiator {
+    ' -- inheritance --
+
+    ' -- usingFor --
+IVSourceController
+    ' -- vars --
+
+    ' -- methods --
+	+instantiate()
+	+instantiateExact()
+	+🔍tryInstanceId()
+	+🔍instanceCheck()
+	+🔍instanceVersion()
+	+remove()
+	+🔍getSourceControl()
+	+🔍getInstance()
+
+}
+' -- inheritance / usingFor --
+
+
+@enduml
+```
 
 ```puml
 @startuml
@@ -86,6 +168,9 @@ note left: Check instance source & version are OK
 IP -> O: exec()
 @enduml
 ```
+
+App developer either deploys plain source or sets up a repository for his work and deploys his source to that to provide version control interface. Then he can propose any organization to add his repository to their Installer Plugin to have his application available for installation.
+If it succeeds, organization members now can create their own instances of applications that all will share same source code and version.
 
 <!-- ### Factory
 
