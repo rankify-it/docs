@@ -1,4 +1,8 @@
-# Specifications
+# Specifications [DRAFT]
+
+!!! Warning
+
+    These specs are still in active development, and are subject to change. 
 
 This document outlines the detailed specifications for our project. Each section in this document corresponds to a different component of the system and is further divided into two categories: Functional Requirements and Security Requirements.
 
@@ -24,14 +28,16 @@ This document outlines the detailed specifications for our project. Each section
 
 ## Functional requirements
 
-### Repositories
+### Distribution system
+
+#### Repositories
 
 <!-- ### Functional -->
 
 Functional interface requirements are described in [IRepository](https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepository.sol), functionality must fulfill following unit tests:
 
 -   It emits `VersionCreated` when `createVersion` is called successfully
--   It reverts with `InvalidReleaseIncrement` if a release number is incremented by more than one
+-   It reverts with `EmptyReleaseMetadata` if no metadata is supplied in `createVersion`
 -   It reverts with `ReleaseZeroNotAllowed` if a release number is set to zero in `createVersion`
 -   When no release nor version exists:
     -   It reverts with `VersionHashDoesNotExist`if `getVersion` is called
@@ -41,12 +47,18 @@ Functional interface requirements are described in [IRepository](https://github.
     -   It reverts with `VersionHashDoesNotExist` if called `getLatestVersion(address)`
     -   It reverts with `ReleaseDoesNotExist` if called `getLatestVersion(uint8)`
 -   When version and release exists:
+    -   It reverts with `InvalidReleaseIncrement` if a release number is incremented by more than one
+    -   It reverts with `EmptyReleaseMetadata` if no metadata is supplied in `updateReleaseMetadata`
     -   It reverts with `AlreadyInPreviousRelease` if `createVersion` if the same source address
-    -   It returns correct release count for given major version upon calling `buildCount`
+    -   It emits `VersionCreated` when `createVersion` is called with valid major version increment
+    -   It emits `VersionCreated` when `createVersion` is called with valid minor version increment
+    -   It returns correct count for given major version upon calling `buildCount`
     -   It returns correct `Version` if `getVersion` is called with valid major and minor version
+    -   It returns correct `Version` if `getVersion` is called with valid tagHash
     -   It returns correct `Version` if `getLatestVersion(address)` is called
     -   It returns correct `Version` if `getLatestVersion(uint8)` is called
     -   It emits `ReleaseMetadataUpdated` when `updateReleaseMetadata` is called successfully
+    -   It returns correct release count if `latestRelease` is called
 
 ### Registry [TBD]
 
@@ -78,23 +90,24 @@ These formally are not required, but will speed up process of incorporating appl
 -   It shall implement instance initialization schema
 -   It may implement [IRankifyInstanceCommons](https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRankifyInstanceCommons.sol)
 
-### Installer
+### Instantiator
 
-installer must implement [IRepoInstaller](https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepoInstaller.sol) interface, functionality must fulfill following unit tests:
+installer must implement [IInstantiator](https://github.com/rankify-it/contracts/blob/8470fc4d9560879f2a10fc0e5d2ccad4c7565069/src/interfaces/eds/IInstantiator.sol) interface, functionality must fulfill following unit tests:
 
 -   it emits `RepositoryAdded` if `addRepository` is called successfully.
 -   it emits `Instantiated` if `instantiate` is called successfully.
--   it reverts with `RepositoryDoesNotExist` if `instantiate` is called with non-existing repository.
--   it reverts with `VersionDoesNotMatchRequirement` if `instantiate` version does not match.
+-   it reverts with `NotDistributing` if `instantiate` is called with non-existing repository.
+-   it reverts with `VersionOutOfBounds` if `instantiate` version does not match.
 -   it emits `Repositor`Removed`when`removeRepository` is called successfully.
 -   it emits `Instantiated` if `instantiateLatest` is called successfully.
 -   it reverts with `RepositoryDoesNotExist` if `instantiateLatest` is called with non-existing repository.
 -   when repository already exists:
-    -   it emits `RepositoryRequirementUpdated` if `addRepository` is called successfully with already existing repository.
--   when `RepositoryRequirementUpdated` was emitted:
-    -   it reverts with `VersionDoesNotMatchRequirement` if instance version does not match requirement anymore.
+    -   it emits `DistributionChanged` if `upgradeDistribution` is called successfully with already existing repository.
+-   when `DistributionChanged` was emitted:
+    -   it reverts with `VersionOutOfBounds` upon calling installation methods with outdated version.
+    -   it reverts with `VersionDeprecated` upon outdated version instance attempting to call installation target.
     -   it emits `Upgraded` if `upgrade` is called successfully.
-    -   it reverts with `VersionDoesNotMatchRequirement` if `upgrade` is called with version that does not match the required version.
+    -   it reverts with `VersionOutOfBounds` if `upgrade` is called with version that does not match the required version.
 -   It returns correct `Repository` if `getRepository` is called with valid instance address
 -   It returns all instances of a repository if `getInstances` is called with valid repository address
 -   It returns all active repositories if `getRepositories` is called
@@ -102,8 +115,8 @@ installer must implement [IRepoInstaller](https://github.com/rankify-it/contract
 -   It returns `VersionRequirement` if `getVersionRequirement` is called with valid instance address
 -   It reverts with `InstanceDoesNotExist` if `getVersionRequirement` is called with non-existing instance address
 -   It reverts with `InstanceDoesNotExist` if `getVersion` is called with non-existing instance address
--   It reverts with `RepositoryDoesNotExist` if `getRepository` is called with non-existing instance address
--   It reverts with `RepositoryDoesNotExist` if `getInstances` is called with non-existing repository address
+-   It reverts with `NotDistributing` if `getRepository` is called with non-existing instance address
+-   It reverts with `NotDistributing` if `getInstances` is called with non-existing repository address
 
 ### Instance [TBD]
 
@@ -142,5 +155,3 @@ Multisig controlled functional [Safe Wallet](https://github.com/safe-global/safe
 -   Rankify DAO signer MAY revoke it's own signer status
 
 ### App Instances
-
-#### Installer [TBD]
