@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rankify.it/architecture/specifications/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Specifications - Rankify Documentation</title>
+    <title>Specifications [DRAFT] - Rankify Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Specifications";
+        var mkdocs_page_name = "Specifications [DRAFT]";
         var mkdocs_page_input_path = "architecture/specifications.md";
         var mkdocs_page_url = "/architecture/specifications/";
       </script>
@@ -58,11 +58,15 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../applications/">Applications</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Specifications</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Specifications [DRAFT]</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#functional-requirements">Functional requirements</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#repositories">Repositories</a>
+    <li class="toctree-l3"><a class="reference internal" href="#distribution-system">Distribution system</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#repositories">Repositories</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#registry-tbd">Registry [TBD]</a>
     </li>
@@ -80,7 +84,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#installer">Installer</a>
+    <li class="toctree-l3"><a class="reference internal" href="#instantiator">Instantiator</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#instance-tbd">Instance [TBD]</a>
     </li>
@@ -93,10 +97,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#rankify-multisig">Rankify Multisig</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#app-instances">App Instances</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#installer-tbd">Installer [TBD]</a>
-    </li>
-        </ul>
     </li>
         </ul>
     </li>
@@ -218,7 +218,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Architecture</li>
-      <li class="breadcrumb-item active">Specifications</li>
+      <li class="breadcrumb-item active">Specifications [DRAFT]</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/rankify-it/edit/master/docs/architecture/specifications.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -228,7 +228,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link">#</a></h1>
+                <h1 id="specifications-draft">Specifications [DRAFT]<a class="headerlink" href="#specifications-draft" title="Permanent link">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These specs are still in active development, and are subject to change. </p>
+</div>
 <p>This document outlines the detailed specifications for our project. Each section in this document corresponds to a different component of the system and is further divided into two categories: Functional Requirements and Security Requirements.</p>
 <ul>
 <li>
@@ -255,13 +259,14 @@
 - It must allow multiple -->
 
 <h2 id="functional-requirements">Functional requirements<a class="headerlink" href="#functional-requirements" title="Permanent link">#</a></h2>
-<h3 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">#</a></h3>
+<h3 id="distribution-system">Distribution system<a class="headerlink" href="#distribution-system" title="Permanent link">#</a></h3>
+<h4 id="repositories">Repositories<a class="headerlink" href="#repositories" title="Permanent link">#</a></h4>
 <!-- ### Functional -->
 
 <p>Functional interface requirements are described in <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepository.sol">IRepository</a>, functionality must fulfill following unit tests:</p>
 <ul>
 <li>It emits <code>VersionCreated</code> when <code>createVersion</code> is called successfully</li>
-<li>It reverts with <code>InvalidReleaseIncrement</code> if a release number is incremented by more than one</li>
+<li>It reverts with <code>EmptyReleaseMetadata</code> if no metadata is supplied in <code>createVersion</code></li>
 <li>It reverts with <code>ReleaseZeroNotAllowed</code> if a release number is set to zero in <code>createVersion</code></li>
 <li>When no release nor version exists:<ul>
 <li>It reverts with <code>VersionHashDoesNotExist</code>if <code>getVersion</code> is called</li>
@@ -273,12 +278,18 @@
 </ul>
 </li>
 <li>When version and release exists:<ul>
+<li>It reverts with <code>InvalidReleaseIncrement</code> if a release number is incremented by more than one</li>
+<li>It reverts with <code>EmptyReleaseMetadata</code> if no metadata is supplied in <code>updateReleaseMetadata</code></li>
 <li>It reverts with <code>AlreadyInPreviousRelease</code> if <code>createVersion</code> if the same source address</li>
-<li>It returns correct release count for given major version upon calling <code>buildCount</code></li>
+<li>It emits <code>VersionCreated</code> when <code>createVersion</code> is called with valid major version increment</li>
+<li>It emits <code>VersionCreated</code> when <code>createVersion</code> is called with valid minor version increment</li>
+<li>It returns correct count for given major version upon calling <code>buildCount</code></li>
 <li>It returns correct <code>Version</code> if <code>getVersion</code> is called with valid major and minor version</li>
+<li>It returns correct <code>Version</code> if <code>getVersion</code> is called with valid tagHash</li>
 <li>It returns correct <code>Version</code> if <code>getLatestVersion(address)</code> is called</li>
 <li>It returns correct <code>Version</code> if <code>getLatestVersion(uint8)</code> is called</li>
 <li>It emits <code>ReleaseMetadataUpdated</code> when <code>updateReleaseMetadata</code> is called successfully</li>
+<li>It returns correct release count if <code>latestRelease</code> is called</li>
 </ul>
 </li>
 </ul>
@@ -307,24 +318,25 @@
 <li>It shall implement instance initialization schema</li>
 <li>It may implement <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRankifyInstanceCommons.sol">IRankifyInstanceCommons</a></li>
 </ul>
-<h3 id="installer">Installer<a class="headerlink" href="#installer" title="Permanent link">#</a></h3>
-<p>installer must implement <a href="https://github.com/rankify-it/contracts/blob/23-v09-factory-specifications/src/interfaces/IRepoInstaller.sol">IRepoInstaller</a> interface, functionality must fulfill following unit tests:</p>
+<h3 id="instantiator">Instantiator<a class="headerlink" href="#instantiator" title="Permanent link">#</a></h3>
+<p>installer must implement <a href="https://github.com/rankify-it/contracts/blob/8470fc4d9560879f2a10fc0e5d2ccad4c7565069/src/interfaces/eds/IInstantiator.sol">IInstantiator</a> interface, functionality must fulfill following unit tests:</p>
 <ul>
 <li>it emits <code>RepositoryAdded</code> if <code>addRepository</code> is called successfully.</li>
 <li>it emits <code>Instantiated</code> if <code>instantiate</code> is called successfully.</li>
-<li>it reverts with <code>RepositoryDoesNotExist</code> if <code>instantiate</code> is called with non-existing repository.</li>
-<li>it reverts with <code>VersionDoesNotMatchRequirement</code> if <code>instantiate</code> version does not match.</li>
+<li>it reverts with <code>NotDistributing</code> if <code>instantiate</code> is called with non-existing repository.</li>
+<li>it reverts with <code>VersionOutOfBounds</code> if <code>instantiate</code> version does not match.</li>
 <li>it emits <code>Repositor</code>Removed<code>when</code>removeRepository` is called successfully.</li>
 <li>it emits <code>Instantiated</code> if <code>instantiateLatest</code> is called successfully.</li>
 <li>it reverts with <code>RepositoryDoesNotExist</code> if <code>instantiateLatest</code> is called with non-existing repository.</li>
 <li>when repository already exists:<ul>
-<li>it emits <code>RepositoryRequirementUpdated</code> if <code>addRepository</code> is called successfully with already existing repository.</li>
+<li>it emits <code>DistributionChanged</code> if <code>upgradeDistribution</code> is called successfully with already existing repository.</li>
 </ul>
 </li>
-<li>when <code>RepositoryRequirementUpdated</code> was emitted:<ul>
-<li>it reverts with <code>VersionDoesNotMatchRequirement</code> if instance version does not match requirement anymore.</li>
+<li>when <code>DistributionChanged</code> was emitted:<ul>
+<li>it reverts with <code>VersionOutOfBounds</code> upon calling installation methods with outdated version.</li>
+<li>it reverts with <code>VersionDeprecated</code> upon outdated version instance attempting to call installation target.</li>
 <li>it emits <code>Upgraded</code> if <code>upgrade</code> is called successfully.</li>
-<li>it reverts with <code>VersionDoesNotMatchRequirement</code> if <code>upgrade</code> is called with version that does not match the required version.</li>
+<li>it reverts with <code>VersionOutOfBounds</code> if <code>upgrade</code> is called with version that does not match the required version.</li>
 </ul>
 </li>
 <li>It returns correct <code>Repository</code> if <code>getRepository</code> is called with valid instance address</li>
@@ -334,8 +346,8 @@
 <li>It returns <code>VersionRequirement</code> if <code>getVersionRequirement</code> is called with valid instance address</li>
 <li>It reverts with <code>InstanceDoesNotExist</code> if <code>getVersionRequirement</code> is called with non-existing instance address</li>
 <li>It reverts with <code>InstanceDoesNotExist</code> if <code>getVersion</code> is called with non-existing instance address</li>
-<li>It reverts with <code>RepositoryDoesNotExist</code> if <code>getRepository</code> is called with non-existing instance address</li>
-<li>It reverts with <code>RepositoryDoesNotExist</code> if <code>getInstances</code> is called with non-existing repository address</li>
+<li>It reverts with <code>NotDistributing</code> if <code>getRepository</code> is called with non-existing instance address</li>
+<li>It reverts with <code>NotDistributing</code> if <code>getInstances</code> is called with non-existing repository address</li>
 </ul>
 <h3 id="instance-tbd">Instance [TBD]<a class="headerlink" href="#instance-tbd" title="Permanent link">#</a></h3>
 <h2 id="security-requirements">Security requirements<a class="headerlink" href="#security-requirements" title="Permanent link">#</a></h2>
@@ -370,7 +382,6 @@ The modifier must reside on contract that manages state -->
 <li>Rankify DAO signer MAY revoke it's own signer status</li>
 </ul>
 <h3 id="app-instances">App Instances<a class="headerlink" href="#app-instances" title="Permanent link">#</a></h3>
-<h4 id="installer-tbd">Installer [TBD]<a class="headerlink" href="#installer-tbd" title="Permanent link">#</a></h4>
               
             </div>
           </div><footer>

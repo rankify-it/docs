@@ -2,207 +2,207 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://rankify.it/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/governance/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/tokens/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/architecture/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/architecture/applications/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/architecture/specifications/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/abstracts/CompositeERC1155/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/abstracts/DiamondReentrancyGuard/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/abstracts/IVInstallerPlugin/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/abstracts/LockableERC1155/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/abstracts/draft-EIP712Diamond/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/facets/DNSFacet/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/facets/EIP712InspectorFacet/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/facets/RankifyInstanceGameMastersFacet/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/facets/RankifyInstanceGameOwnersFacet/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/facets/RankifyInstanceMainFacet/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/facets/RankifyInstanceRequirementsFacet/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IERC1155Receiver/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/ILockableERC1155/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IManagedAssetFactory/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IMultipass/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IRankToken/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IRankifyInstanceCommons/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IRepository/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IVInstaller/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IVRegistry/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IVRepoFactory/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/interfaces/IVTag/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/libraries/LibArray/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/libraries/LibCoinVending/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/libraries/LibEIP712Storage/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/libraries/LibMultipass/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/libraries/LibQuadraticVoting/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/libraries/LibRankify/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/libraries/LibReentrancyGuard/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/libraries/LibTurnBasedGame/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/tokens/RankToken/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/contracts/tokens/Rankify/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/interfaces/js/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/support/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://rankify.it/support/faq/</loc>
-         <lastmod>2024-06-11</lastmod>
+         <lastmod>2024-06-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
